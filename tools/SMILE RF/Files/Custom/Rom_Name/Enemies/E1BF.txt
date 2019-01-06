@@ -1,0 +1,3 @@
+Points to these graphics
+In Enemies allowed list in room $7B32E
+Palette = E001

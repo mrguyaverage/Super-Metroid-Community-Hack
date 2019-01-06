@@ -1,0 +1,60 @@
+<Config>
+  <ROMfile>..\build\metroid.smc</ROMfile>
+  <FixScroll>true</FixScroll>
+  <SaveNames>true</SaveNames>
+  <LevelBufferAmount>200</LevelBufferAmount>
+  <LogLevel>INFO</LogLevel>
+  <RoomDataSpaceBank8F>
+    <Space start="8000" end="9193" />
+    <Space start="91F8" end="B769" />
+    <Space start="B971" end="BA36" />
+    <Space start="BD07" end="BE3E" />
+    <Space start="BF9E" end="C115" />
+    <Space start="C215" end="C8C6" />
+    <Space start="C98E" end="E0FC" />
+    <Space start="E1D8" end="E247" />
+    <Space start="E301" end="E3E7" />
+    <Space start="E4C0" end="E51E" />
+    <Space start="E6A2" end="E7E0" />
+    <Space start="E99A" end="FFFF" />
+  </RoomDataSpaceBank8F>
+  <EnemyDataSpaceBankA1>
+    <Space start="8000" end="FFFF" />
+  </EnemyDataSpaceBankA1>
+  <EnemyTypeSpaceBankB4>
+    <Space start="8000" end="92C5" />
+    <Space start="F4B8" end="FFFF" />
+  </EnemyTypeSpaceBankB4>
+  <FXandDoorSpaceBank83>
+    <Space start="8000" end="ABEF" />
+    <Space start="AD66" end="FFFD" />
+  </FXandDoorSpaceBank83>
+  <RoomNameSpaceBankAny>
+    <Space start="DFD500" end="DFFFFF" />
+  </RoomNameSpaceBankAny>
+  <LevelDataSpaceBankAny>
+    <Space start="B98000" end="B9A633" />
+    <Space start="BAC629" end="C18DA9" />
+    <Space start="C1B6F6" end="DED1BF" />
+    <Space start="DF8000" end="DFD4DE" />
+    <Space start="E08000" end="FFFFFF" />
+  </LevelDataSpaceBankAny>
+  <MapandDemoSpaceBank82>
+    <Space start="876C" end="8919" />
+    <Space start="C75D" end="C7CA" />
+    <Space start="C83B" end="CAA0" />
+    <Space start="F70F" end="FFFF" />
+  </MapandDemoSpaceBank82>
+  <DemoMovieDataBank91>
+    <Space start="8885" end="89FC" />
+    <Space start="8ACE" end="9EE1" />
+  </DemoMovieDataBank91>
+  <ASMUsedSpaceBankAny>
+    <Space start="808000" end="808000" />
+    <Space start="80D000" end="80D030" />
+    <Space start="82E413" end="82E41B" />
+    <Space start="82E795" end="82E79D" />
+    <Space start="82E83B" end="82E843" />
+    <Space start="82EAEB" end="82EAF3" />
+  </ASMUsedSpaceBankAny>
+</Config>

@@ -1,0 +1,13 @@
+BTS value from 00 to FF. This is the timer for how long the block waits before it first disappears/reappears.
+
+High Index - how long the block is unsolid every cycle (01 - FF, 00 is 18 hours)
+Low Index - how long the block is solid every cycle (01 - FF, 00 is 18 hours)
+
+Timer approximations:
+01 = 1/4 second (Exact value: 0.26666... seconds)
+04 = 1 second
+08 = 2 seconds
+0C = 3 seconds
+10 = 4 seconds
+80 = 34 seconds
+FF = 68 seconds

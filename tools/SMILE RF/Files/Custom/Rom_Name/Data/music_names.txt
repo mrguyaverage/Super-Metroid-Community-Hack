@@ -1,0 +1,25 @@
+00 - Intro
+03 - Title Screen
+06 - Empty Crateria
+09 - Space Pirates
+0C - Return To Crateria
+0F - Upper Brinstar
+12 - Lower Brinstar
+15 - Upper Norfair
+18 - Lower Norfair
+1B - Maridia
+1E - Tourian
+21 - Mother Brain
+24 - Boss Fight 1
+27 - Boss Fight 2
+2A - Miniboss Fight
+2D - Ceres Station
+30 - Wrecked Ship
+33 - Zebes Exploding
+36 - Samus's Story
+39 - Death SFX
+3C - Credits Roll
+3F - "The Last Metroid..."
+42 - "The Galaxy..."
+45 - Super Metroid
+48 - Samus's Revenge

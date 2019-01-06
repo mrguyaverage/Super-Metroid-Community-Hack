@@ -1,0 +1,271 @@
+'Crateria'
+791F8 Landing Site
+792B3 Crateria Gauntlet Entrance
+792FD Main Street / Alcatraz
+793AA
+793D5 Crateria Save Room
+793FE
+79461
+7948C
+794CC
+794FD
+79552
+7957D Crab Maze
+795A8
+795D4 Crateria Tube
+795FF Crateria Lake
+7962A
+7965B Crateria Gauntlet 
+7968F
+796BA Old Tourian Shaft
+7975C Old Tourian Boss Room
+797B5
+79804 Silver Torizo Boss Room
+79879
+798E2
+7990D
+79938
+79969
+79994 Crateria Map Room
+799BD
+799F9 Old Tourian Super Missile
+79A44
+79A90
+'Brinstar'
+79AD9
+79B5B
+79B9D
+79BC8
+79C07 Brinstar Reserve Tank
+79C35 Brinstar Map Room
+79C5E Fireflea Room
+79C89
+79CB3
+79D19
+79D9C
+79DC7 Spore Spawn Boss Room
+79E11
+79E52
+79E9F
+79F11
+79F64
+79FBA Brinstar Noob Bridge
+79FE5
+7A011
+7A051
+7A07B
+7A0A4
+7A0D2
+7A107
+7A130
+7A15B
+7A184 Pink Brinstar Save Room
+7A1AD
+7A1D8
+7A201 Green Brinstar Save Room
+7A22A Etecoon Save Room
+7A253 Red Brinstar Shaft
+7A293 X-Ray Gauntlet
+7A2CE X-Ray Puzzle
+7A2F7
+7A322
+7A37C
+7A3AE
+7A3DD
+7A408
+7A447 Spazer Beam Room
+7A471
+7A4B1
+7A4DA
+7A521 Mini-Kraid Hallway
+7A56B Kraid Boss Door
+7A59F Kraid Boss Room
+7A5ED Statue Hallway
+7A618
+7A641
+7A66A Statue Room
+7A6A1 Kraid Hideout Entrance
+7A6E2 Varia Suit Room
+7A70B Kraid Save Room
+7A734 Red Brinstar Save Room
+'Norfair'
+7A75D
+7A788
+7A7B3
+7A7DE
+7A815
+7A865
+7A890 Ice Beam Room
+7A8B9
+7A8F8
+7A923
+7A98D Crocomire Boss Room
+7A9E5 High Jump Room
+7AA0E
+7AA41
+7AA82
+7AAB5 Post-Crocomire Save Room
+7AADE
+7AB07
+7AB3B
+7AB64
+7AB8F Grapple Jump Cavern
+7ABD2
+7AC00
+7AC2B Grapple Beam Room
+7AC5A Norfair Reserve Tank
+7AC83
+7ACB3
+7ACF0 Speedbooster Escape Room
+7AD1B Speedbooster Room
+7AD5E
+7ADAD
+7ADDE Wave Beam Room
+7AE07
+7AE32
+7AE74
+7AEB4
+7AEDF
+7AF14 Ridley Hideout Entrance
+7AF3F Ridley Hideout Elevator
+7AF72
+7AFA3
+7AFCE
+7AFFB
+7B026
+7B051
+7B07A
+7B0B4 Norfair Map Room
+7B0DD Bubble Norfair Save Room
+7B106 Speedbooster Rubble Hallway
+7B139
+7B167 Rocky Norfair Save Room
+7B192 Pre-Crocomire Save Room
+7B1BB Ridley Hideout Save Room
+7B1E5 Golden Chozo Statue
+7B236
+7B283 Gold Torizo Boss Room
+7B2DA
+7B305
+7B32E Ridley Boss Room
+7B37A Ridley Boss Door
+7B3A5
+7B3E1 Unused Norfair Room
+7B40A Mickey Mouse 
+7B457
+7B482
+7B4AD
+7B4E5
+7B510
+7B55A
+7B585 Red Keyhunter Shaft
+7B5D5
+7B62B Ninja Pirates Boss Room
+7B656
+7B698 Broken Hatchling Container
+7B6C1 Screw Attack Room
+7B6EE Dragon Rock 
+7B741 Red Keyhunter Save Room
+'Wrecked Ship'
+7C98E Silver Chozo Statue
+7CA08 WS Entrance Hallway
+7CA52 Wrecked Ship Attic
+7CAAE 
+7CAF6 Wrecked Ship Mainstreet
+7CB8B
+7CBD5
+7CC27
+7CC6F Phantoon Boss Door
+7CCCB Wrecked Ship Map Room
+7CD13 Phantoon Boss Room
+7CD5C
+7CDA8
+7CDF1
+7CE40 Gravity Suit Room
+7CE8A Wrecked Ship Save Room
+'Maridia'
+7CED2 West Maridia Save Room
+7CEFB Maridia Noob Tube
+7CF54 West Maridia Tube
+7CF80 East Maridia Tube
+7CFC9
+7D017
+7D055 Turtle Family Room
+7D08A
+7D0B9
+7D104
+7D13B
+7D16D
+7D1A3
+7D1DD
+7D21C
+7D252
+7D27E Plasma Larvae
+7D2AA Plasma Beam Room
+7D2D9
+7D30B
+7D340
+7D387
+7D3B6 Maridia Map Room
+7D3DF East Maridia Save Room
+7D408
+7D433
+7D461 West Sand Hall
+7D48E
+7D4C2 East Sand Hall
+7D4EF West Sand Hole Cave
+7D51E East Sand Hole Cave
+7D54D West Sand Hole Transition
+7D57A East Sand Hole Transition
+7D5A7 Maridia Aqueduct
+7D5EC
+7D617
+7D646
+7D69A
+7D6D0 Spring Ball Room
+7D6FD
+7D72A Maridia Gauntlet
+7D765 Maridia Aqueduct Save Room
+7D78F Draygon Boss Door
+7D7E4 Botwoon Speed Hallway
+7D81A Draygon Save Room
+7D845
+7D86E
+7D898
+7D8C5 Shaktool Sand Room
+7D913
+7D95E Botwoon Boss Room
+7D9AA Space Jump Room
+7D9D4
+7D9FE
+7DA2B Cactus Alley
+7DA60 Draygon Boss Room
+'Tourian'
+7DAAE Tourian Elevator
+7DAE1 Metroid Room 1
+7DB31 Metroid Room 2
+7DB7D Metroid Room 3
+7DBCD Metroid Room 4
+7DC19 Blue Sidehoppers
+7DC65 Dust Torizo Room
+7DCB1 Metroid Hatchling Room
+7DCFF Tourian Seaweed Room
+7DD2E Tourian Recharge Room
+7DD58 Mother Brain Boss Room
+7DDC4 Mother Brain Boss Door
+7DDF3
+7DE23 Mother Brain Save Room
+7DE4D Tourian Escape Room 1
+7DE7A Tourian Escape Room 2
+7DEA7 Tourian Horizontal Escape 
+7DEDE Tourian Vertical Escape 
+7DF1B Tourian Elevator Save Room
+'Ceres'
+7DF45 Ceres Shaft
+7DF8D
+7DFD7
+7E021 Ceres Computer Room
+7E06B
+7E0B5 Ceres Ridley Boss Room
+'Debug'
+7E82C Debug Room

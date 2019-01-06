@@ -1,0 +1,875 @@
+Version 1.02	
+	*Feature* RF now asks to confirm if a ROM has a Header if it attemps to open a ROM with incomplete banks.
+	*Feature* Restored an older feature which allowed RF to decrypt Level Data Pointers. It is accessed via the Debug Tools section.
+	*Feature* RF's option to load Enemies from Bank $A2 is now gated behind setting the high bit of the first byte in the ROM (+80). Setting a room to use Bank $A2 remains the same (set the Room Index to +80).
+	
+	*Bug Fix* Increased the delay when loading Quickmet with Autopatch enabled by 50% to give a bit more time for the patch to be applied.
+	*Bug Fix* Fixed an error which made RF read the wrong byte when checking for the Compressed Scrolls patch.
+	*Bug Fix* Fixed an accidental stray character that broke code for MultiCRE support.
+	
+Version 1.01
+	*Bug Fix* Fixed an error I overlooked that made RF crash when it attempted to save a Tileset Palette or Tiletable.
+
+Version 1.00
+	*Feature* The Mode 7 tilemap in the Level Editor can now be quickly enabled or disabled with F10. This shortcut only works within the Level Editor for Mode 7 rooms.
+	*Feature* The Mode 7 Tile Table Editor now includes an option to force tiles to use the high priority bit. Only useful in Mode 7 with EXTBG.
+	*Feature* Added an option to automatically reapply the previous patch when using QuickMet. Useful for quickly testing ASM  work in progress. This option does NOT create a backup of the main ROM before applying the patch, as it is applied directly to the altered QuickMet ROM. Manually applying the same ASM will still create a backup as normal.
+	*Feature* RF can now edit Tileset Pointers from within the Tileset Editor.
+	*Feature* RF will automatically add / remove / rearrange the Tileset_Entries.txt when changing Tileset Pointers, however it won't add termination entries.
+	*Feature* Added support for expanded Enemy GFX Lists (Allowed List).
+	
+	*Bug Fix* Fixed an error which caused RF to not clear out old unused Level Data space.
+	*Bug Fix* Fixed an error which cause the Credits Editor to not align the tilemap correctly to 32 tiles wide.
+	*Bug Fix* Loading a new ROM now properly reloads the map data as well.
+	*Bug Fix* Several options in the Tileset Editor for Graphics and Tiletables are now disabled when using a Mode 7 room.
+	*Bug Fix* Fixed an error which caused the Level Editor to show the regular Mode 0 room over Mode 7 rooms incorrectly.
+	*Bug Fix* Mode 7 rooms now open correctly when RF is started and automatically reopens the previous room, instead of always showing the regular room.
+	*Bug Fix* You can now properly select Clipboard Tiles from within the Tileset Editor while the Tile Table is zoomed in.
+	*Bug Fix* Fixed an error which caused RF to not save any tilemaps or backgrounds in the BG / Tilemap Editor.
+	*Bug Fix* RF now correctly preserves Level_Entries.txt comments.
+
+Version 0.99
+	*Feature* The BG / Tilemap Editor now only allows editing the Room BG when opened via the Edit BG button, to reduce loading times by not loading extra graphics. Opening it from Windows > Special Editors still opens it as normal with extra options.
+	*Feature* Added an Intro Text Editor. This can be used to change the text shown during the intro, as well as scenes, and what parts of the intro are shown.
+	*Feature* Added an option for Auto Focus back into Preferences due to popularity.
+	
+	*Bug Fix* Fixed a crash that occured when opening the Message Editor.
+	*Bug Fix* The PLM / Enemy Info boxes now update when the respective type is changed in the PLM / Enemy ID, instead of only when changing the list.
+	
+	*Cleanup* Renamed all tags displaying "H-Flip" or "V-Flip" to "X Flip" and "Y Flip".
+
+Version 0.98
+	*Feature* Added the intro scenes into the Background Editor.
+	*Feature* Added the Zebes hexagon map into the Background Editor.
+	
+	*Bug Fix* Fixed a crash that occured when RF was opened with no ROM open due to a bad Tileset Editor reference while saving settings.
+	*Bug Fix* The Tilemap Pointer in the BG Editor now shows the correct pointer for the current background tilemap.
+	*Bug Fix* Flipped tiles can now be properly placed in the BG Editor.
+	*Bug Fix* Fixed an error with the priority of pages in the QuickMet SRM options.
+	
+	*Cleanup* Wrote some new functions to handle internet connections for bug reports, resulting in RF no longer requiring MSINET.OCX to be registered.
+
+Version 0.97
+	*Feature* Added a tool to mask tiles in the Level Editor when using the Clipboard. Double clicking any tile in the Level Editor will add its value into the Mask Write Tiles textbox.
+	*Feature* Clicking the Room Name label in the Room Header section now opens the MDB.txt in Notepad.	
+	*Feature* RF can now open a new ROM without loading or checking new rooms in the ROM by holding SHIFT when clicking Open ROM in the menu.
+	*Feature* Added a button into the FX Editor to quickly open the FX_Entries.txt file.
+	*Feature* Added a checkbox into the Tileset Editor which allows clipboard selection from within the Tileset Editor. This is saved to RF_Settings.
+	*Feature* If RF fails to update properly (due to a poor internet connection), it will now ask if you want to try again when it is run next time.
+	
+	*Bug Fix* Fixed an error where RF cleared the room changes flag if a save had been attempted but failed due to being over the allocated space for the Level Data.
+	*Bug Fix* RF now ALWAYS asks you if you want to save a room over the allocated space if you're attempting to leave the current room and you clicked yes to save.
+	*Bug Fix* RF now only reloads the graphics set when loading a new room if it uses a different set to the previous room.
+	*Bug Fix* Corrected a bug which overwrote the Distance value in the Door Editor when loading, instead of reading the data from the ROM.
+	*Bug Fix* RF now correctly loads the MoonWalk + Extra Suits settings in the QuickMet SRM Settings.
+	*Bug Fix* Fixed an issue that caused a crash when moving Enemy GFX data when saving pointers.
+	*Bug Fix* Fixed a crash that occured when using the Palette Fade/Heat/Transition tools while only one line was visible.
+	*Bug Fix* Clicking the Room Name box in the Room Header section now properly opens the MDB.txt for the current ROM when there's no current room name.
+	*Bug Fix* The Room Name box now properly displays up to 27 characters, instead of 25 (and leaving a bit of space).
+	*Bug Fix* You can now also right click to select a tile in the Tileset Editor.
+	
+	*Cleanup* Adjusted and rewrote the room opening functions to GREATLY increase the speed of loading for most rooms.
+	*Cleanup* Rewrote the update functions to now place relevent files into the \Files\Temp folder. RF should still be able to update properly from previous versions. 
+
+Version 0.96
+	*Feature* Holding SHIFT while drawing tiles in the Level Editor now forces RF to draw tiles in a straight line. The previous function of SHIFT (previewing FX height) has been switch over to ALT instead. This is to keep the shortcut the same as other programs with similar features to draw straight lines.
+	*Feature* Added a window that draws over the Level Editor showing the current tile information while holding `. Also added RAM Address for current Tile and BTS. This replaces tile info in the Level Editor title bar.
+	*Feature* Added extra information into the Enemy Editor to show the exact RAM addresses of enemy variables.
+	*Feature* RF now updates the Level_Entries.txt automatically when you change a room's Level Data pointer. RF will add new entries and delete the old entry (unless the old entry is still being used by another room/state).
+	*Feature* RF now loads the graphics for the Samus image in the Palette Editor directly from the ROM.
+	*Feature* Added "Use Clipboard" into the BG Editor, which copies the current Clipboard into the BG Tilemap.
+	*Feature* RF can now read compressed Scroll Data if the relevant patch has been applied.
+	*Feature* Added an extra page into the QuickMet SRM Settings for the MoonWalk + Extra Suits patch by Mettyk25jigsaw. This page only appears if the patch has been applied.
+	*Feature* Added a View Preference to always show PLM / Enemy indexes in a room, without having to hold the mouse over them.
+	*Feature* Added 4 extra buttons into the Special BTS section for 1x1, 2x1, 1x2 and 2x2 BTS blocks. The larger 3 options will set the correct BTS for larger BTS blocks, while the 1x1 will remove the BTS for larger BTS blocks.
+	*Feature* You can now right-click in the BTS Section (except 1x1 - 2x2) to add the current BTS type into the Clipboard to place multiple at once, without having to drag/drop for each tile. Putting a BTS into the Clipboard will set BTS Only, and putting any other regular tile into the Clipboard will restore the previous Graphic/BTS Only settings.
+	*Feature* RF now clears out unused Enemy / PLM data when reducing the number of Enemies / PLMs in a room.
+	*Feature* RF can now display and edit each section of the Scrolling Sky Backgrounds.
+	*Feature* RF can now properly export / import room data. You can import the Room Header, Level Data, Scroll Data, PLMs and Enemies at the moment.
+
+	*Bug Fix* Made some changes to certain functions to increase security of RF due to it containing sensitive information. This will slightly increase the loading times when opening RF (really it shouldn't be noticable), but should prevent any potential information leaks. 
+	*Bug Fix* Added a check when changing the Level Data Pointer for whether RF should clear out the extra unused data, due to a chunk of 00 00 data incorrectly making RF think there was previously a lot of Level Data there.
+	*Bug Fix* Rewrote the Default Tile Types functions to better create defaults from the Level Editor.
+	*Bug Fix* Fixed a crash caused by using QuickMet in a room with a PLM at the top left of the room. External file "http://sadiztyk.metroidconstruction.com/RF/Files/QuickMet.bin". Download and save to the "/Files/TestRoom/" folder.
+	*Bug Fix* Fixed a bug which made Enemies and PLMs prevent the Tile properties copy (= key) when applied to tiles under them.
+	*Bug Fix* Disabled the arrow keys while in the Enemy GFX list to prevent desyncs between Enemy ID and Palette lists.
+	*Bug Fix* New PLMs and Enemies are now placed to the top left of the viewable area in the Level Editor, rather than at the very top left of the room.
+	*Bug Fix* Show PLM / Enemy Boxes now shows boxes around all Enemies and PLMs, instead of just the one the mouse is over.
+	*Bug Fix* Clicking a tile in the Tile Table now properly updates the Tile Type preview in the main window.
+	*Bug Fix* Clicking a tile in the Level Editor / Tile Table now updates the BTS Value in the main window.
+	*Bug Fix* Adjusted the movement of Enemies in the Level Editor relative to the original mouse click to be much more accurate.
+	*Bug Fix* Treadmills / Enemy Break / Enemy Walls now respect Show Special BTS Graphics in the Level Editor.
+
+	*Cleanup* Rearranged several menu tools and options.
+	*Cleanup* Completely removed MetBuddy from RF. While it was somewhat of a fun thing hidden away, I don't think anyone ever actually used it due to how distracting it can be while editing. 
+	*Cleanup* RF now sets focus to its own windows automatically as this should never be disabled (it interferes with keyboard shortcuts). Removed Auto Focus Windows from the RF Menu.
+	*Cleanup* RF now always saves its settings and configuration. Removed AutoSave Settings from the RF Menu.
+	*Cleanup* Removed the Set Slope option for BTS. I don't think anyone would ever have this unticked.
+	*Cleanup* Removed Show Scroll PLM Changes from the Preferences menu, as this is now always enabled.
+	*Cleanup* Switched around the PLM / Enemy counters, to match with other sections where PLMs are labelled / listed before Enemies.
+	
+Version 0.95
+	*Feature* Updated how the "palette_entries.txt" worked to also include palette line size and offsets.
+	*Feature* RF will now automatically open compiled text files in Notepad after creating them.
+	*Feature* Added a text-based Demo Scene Editor. RF can export and input Demo input as text, as well as edit room positions and length. Options to import .SMV files will come with a future update.
+	*Feature* The ASM Patcher now selects xkas as the default program when running for the first time. It will still ask for a program if RF cannot find xkas.exe in the Files folder (xkas comes packaged with RF by default)
+	*Feature* RF now puts a note into the Check Updates menu if there is an update available, so you can quickly check without having to actually click it.
+	*Feature* You can now skip tiles while placing Vertical / Horizontal BTS with Ctrl by not clicking the mouse while moving (while still holding Ctrl), similar to holding Shift. 
+	*Feature* The Enemy Editor now shows the RAM address for the current enemy index in the title bar.
+	*Feature* Added some loading screen images to RF, made by Jefe962 and Webber1900.
+
+	*Bug Fix* Added a Windows version check to adjust window sizes, due to Windows 10 (and probably 8+) cutting off the lower part of some windows.
+	*Bug Fix* Fixed the cursor position when entering bytes into the Compressed Data Search tool.
+	*Bug Fix* Added a flag for whether a room's position / size had changed in the map, rather than reusing the flag for all map changes. This prevents warning messages asking to save the map when no changes had been made aside from the room's size / position.
+	*Bug Fix* Fixed an error which caused tile group flipping on Layer 2 to incorrectly flip both Layer 1 and 2.
+	*Bug Fix* Adjusted the Message Box Editor to start from Message ID $01 instead of $00, as there is no Message $00 in the game.
+	*Bug Fix* Added a missing line of code in the BG Editor so you can drag the mouse to place tiles, instead of having to click each time.
+	*Bug Fix* Entering a room through the Map Editor into the same area no longer reloads the Map, and doesn't ask if you want to save the Map before changing. Changing rooms via the Room list still functions as normal.
+	*Bug Fix* Fixed an error which caused the Room Size Changed warning to persist through rooms if you chose not to adjust the Level Data after changing a room's size.
+	
+Version 0.94
+	*Feature* The Background Editor can now edit the Menu's Zebes background, Pause Map borders, Status Screen, and Room BG Pointers. 
+
+	*Bug Fix* Fixed a crash that occurs when trying to change room states.
+	*Bug Fix* Fixed an error with the latest version number which caused .93 to continuously see an update because it was incorrectly set as .92.
+
+Version 0.93
+	*Feature* Added a Save Room Header button into the Room Header section. This button will function for the Room Header as Save Pointers does for Room Pointers. It will save only the data in the Room Header, and nothing else. This also means that saving the room normally with Ctrl + S will NOT save anything within the header.
+	*Feature* Added an alert message notifying that the Level Data should be saved after changing a room's dimensions. 
+	*Feature* Added multiple clipboards. You could previously technically have 2 clipboards by using the Undo/Redo Clipboard options, but now you can have up to 4 Clipboards loaded at any one time. The option to reload a previous clipboard has been removed.
+	*Feature* CTRL + 1 to 4 will now switch between Clipboards while in the Level Editor.
+	*Feature* Added support for extra Tilesets. RF now checks the ROM Tileset Pointer table for valid pointers and stop when it reaches a pointer below $8000. It will also check the data at each valid pointer to make sure it points to a valid Tileset.
+
+	*Bug Fix* Removed some obselete code which caused the Room State Pointers section to not minimize correctly.
+	*Bug Fix* Fixed an error which caused placing large flipped clipboards to take a long time if Show Level Data Size was enabled, due to RF calculating the size for each flipped tile.
+	*Bug Fix* Added in another instruction check for Save Stations into the PLM Editor. This will fix the Save Refills patch causing RF to not recognise Save Stations.
+	
+	*Cleanup* Merged the ROM Data and Compressed ROM Data into a single section.
+
+Version 0.92
+	*Feature* Added a Room Name label into the Room Header section. Room Names can be added into the "mdb.txt" file. This option has no effect on the ROM itself, and is used only within RF.
+	*Feature* Holding Shift while placing a line of Vertical / Horizontal BTS with Ctrl will disable placement of BTS / Tile values without disrupting the tile count. Useful in case there is a platform in the way so you don't overwrite the BTS of the platform.
+	*Feature* Added a Warning Message before saving a room if all 40 PLMs have been used in that room. Using all PLM space prevents mid-game PLMs from spawning, which will stop all Scroll PLMs, breakable blocks, and various other objects from functioning (they all need to create a PLM to work, and they can't create any if there's no space left). You can still force save the room with Ctrl + Shift + S if you had previously click Cancel on the Warning Message and set to not show again.
+	*Feature* Holding ` for Tile Info now shows the current Tile's X and Y coordinates in the room.
+	*Feature* RF will now bring up a small menu in the Map Editor when you enter a room with multiple results, so you can choose which room to open.
+	*Feature* You can now also scroll around the Level Editor and Tiletables by holding the Spacebar and left click and moving the mouse. 
+	*Feature* When clicking the 8x8 Tile Previews in the Tileset Editor to change Tile Priority, clicking in the middle of the group (where the red square appears) will change all 4 8x8 Tiles to the new Priority, instead of having to click one by one.
+
+	*Bug Fix* Fixed an error that caused the Tiletable scrolling limits to be wrong if RF was opened while the Tiletable was zoomed in.
+	*Bug Fix* Fixed the outline displays showing the sizes of Message Boxes in the Message Editor.
+	*Bug Fix* Fixed an error that caused the Enemy / PLM sliders to display a hexidecimal value when opening a room.
+	*Bug Fix* Drawing Link BTS now sets an Undo/Redo state correctly if the click originated on a PLM.
+	*Bug Fix* Selecting tiles in the Tileset Editor Table now respects Tiletable zoom when mirroring the current tile in the Tile Table.
+	*Bug Fix* Saving the Tiletable in the Tileset Editor no longer refreshes the Palette which caused you to lose any unsaved Palette changes.
+	*Bug Fix* Saving the Tileset Editor Tiletable now displays both Tiletable Sizes in the Info Bar at the same time, rather than the CRE Table very quickly followed by the SCE Table.
+
+	*Cleanup* Merged the Room States section with the Room Pointers section.
+	
+Version 0.91
+	*Feature* The Room Pointers section got a bit of an overhaul. Each Pointer now also has a checkbox next to it. When a Pointer's checkbox is ticked, the data will WRITE to the new Pointer location, otherwise it will be READ. 
+	*Feature* The entire room is now NOT saved when changing pointers; RF will only read/save/move data for Pointers that have changed since the last time they were saved.
+	*Feature* When changing the Level Data Pointer while set to READ from the new Pointer, RF will automatically create an Undo / Redo backup of the current Level Data before reading from the new location (in case you had unsaved work).
+	*Feature* Added a Manual RF Update into the Help (?) Menu. This will allow you to manually download and save the most recent build of RF through your default web browser if Automatic Updates do not work for you (this is usually a firewall issue).
+	*Feature* Adding a Layer 2 Tilemap to a room now places empty air tiles (CRE Tile $FF) as the default.
+	*Feature* Reloading the Map in the Map Editor now also reloads the Map GFX / Palettes from the ROM, rather than having to reopen the whole ROM.
+	*Feature* Rooms with multiple FX Pointers now remember each set of FX Data when switching between them in the FX Editor.
+
+	*Bug Fix* The labels in the Bug Reporting window now disappear automatically as text is entered, instead of having to select the default text and type over it.
+	*Bug Fix* Double pressing arrow keys to flip tiles on Layer 2 now flips Layer 2 properly instead of Layer 1. They also now follow the Graphic / BTS Only Clipboard Options.
+	*Bug Fix* Fixed a bug where changing a room's Map position and then changing rooms and saving Map changes would overwrite the newly opened room's Map position with the old room's position.
+	*Bug Fix* Flipping tiles with the arrow keys now properly updates the Current Tile Size when enabled.
+	*Bug Fix* Fixed an error which caused some BTS numbers to appear for known Special BTS Graphics in the Level Editor.
+	*Bug Fix* Show Map Icons in the Map Editor now remembers it's previous setting when opening RF.
+	*Bug Fix* Added in a workaround to prevent mouse clicks from triggering in the Level / Map Editor after double clicking to open / save a file.
+	*Bug Fix* Fixed an error where FX Data could be saved to the wrong location if the FX Pointer was changed in RF without saving the Pointers first, then the FX Editor was saved. FX Data is now always saved to the most recently verified FX Pointer.
+	*Bug Fix* Added a check into the Level Editor to check if any tiles were actually changed before calculating the current Tile Size. This will drastically reduce any lag caused by showing the current Tile Size in very large rooms.
+
+Version 0.90
+	*Feature* The RF Debug menu now shows automatically if it has been previously opened (since this update).
+
+	*Bug Fix* The Mode 7 Scene Editor now correctly exports Zebes Surface and Zebes Clouds GFX.
+	*Bug Fix* Fixed an error which cause the Tileset Editor keyboard shortcuts to stop working after clicking a checkbox.
+	*Bug Fix* Double pressing arrows to flip the Clipboard in the Level Editor now only works if you press the same key twice, rather than any arrow key. Also increased the time allowed between key presses.
+	*Bug Fix* Refreshing the Map Editor no longer displays the Map Icons if they are set to hidden.
+	*Bug Fix* Fixed an error caused by multiple rooms with different dimensions sharing a Level Data Pointer, which resulted in being unable to place tiles properly in a room.
+
+	*Cleanup* Certain options in the RF Debug menu are now disabled, as they currently only work with Seraphim and will break any other ROM.
+	*Cleanup* Renamed "SMILE RF Help Guide" in the Help Menu to "SMILE RF Help Guide (SMMM)" to make it more obvious that this points to Begrimed's Super Metroid Mod Manual.
+
+Version 0.89
+	*Feature* You can now change Area Text icons by right-clicking the Icon in the Map Editor.
+	*Feature* Added in a couple extra options for palettes for a certain hack, to make things easier. Not relevent to most people (this is just so I know when it was done). 
+	*Feature* Added an option to search for data that has been compressed to the ROM Stuff section. You can enter up to 40 bytes to search for, and RF will decompress all possible data in the ROM to find these bytes. This takes a long time, so it will run in the background and can be cancelled at any time (results will be shown from where RF was up to in the ROM).
+	*Feature* RF can now open and edit Super Metroid EU ROMs. This particular ROM is PAL and previously did not open in any version of SMILE. While RF is able to edit it, I would still recommend sticking with NTSC as literally all of the information in Metroid Construction applies to the NTSC ROM.
+
+	*Bug Fix* Force Saving a room over the data limit by pressing Ctrl+S multiple times no longer reverts back to the Save Failed alert in the Level Editor after saving. 
+
+Version 0.88
+	*Feature* You can now Undo / Redo changes to the Mode 7 Tilemap in the Level Editor.
+	*Feature* Added a Credits Editor to Tools > Special Editors. Please be respectful of the original creators of the game if you use this feature.
+
+	*Bug Fix* Fixed a crash caused when clicking the Show Map Icons option in the Map Editor.
+	*Bug Fix* Fixed how RF reads Tilesets. It can now properly read Tilesets after they've been repointed, and also if a ROM had previously had it's graphics sets repointed with SMILE JX.
+	*Bug Fix* Fixed a bug that cause the Map Editor to draw the current map tile in memory blank after clicking Load Map, even though it was properly being stored into the Map arrays.
+	*Bug Fix* Mode 7 rooms in the Level Editor now check available space in the Tileset before saving a Mode 7 Tilemap, and give a warning as necessary.
+
+Version 0.87
+	*Feature* Map Icons can now be moved within the Map Editor. No support yet for adding new icons.
+	*Feature* Moved around some of the windows in the Map Editor. The first page now contains the Tilesheet, X/Y Flip, Hidden Tile flag, and Display Full Map buttons. The second page now displays the Map Palette, Shift Map buttons, Map Icons, and Map Tile Data info.
+	*Bug Fix* The Hidden Tile marker (the red dot) now properly displays in the Map Tile Preview when flipping the tile, or enabling/disabling the Hidden Tile flag in the Map Editor.
+	*Bug Fix* Fixed some drawing issues for the Tile / Zoom Previews in the Map Editor, Message Editor and BG Editor. Previews are now more centered rather than being to the upper left.
+	*Bug Fix* Changing the Map Palette now also changes the Palette of the currently selected Map Tile in memory.
+	*Bug Fix* Fixed a bug which made it annoying to try to place a room with the top left corner on the edge of the map in the Map Editor. You still cannot place rooms on the topmost line of the Map Editor, due to how maps are coded in game.
+	*Feature* Shift Map in the Map Editor now also moves all rooms in that area accordingly after saving the map.
+	*Feature* Added support for Black_Falcon's "Yellow Scrolls 1.2" patch. If the patch is applied to the current ROM, the extra 3 scroll colours are added into the scroll cycle.
+	*Feature* Added Zebes Planet, Zebes Surface and Zebes Gas Clouds into the Mode 7 Scene Editor.
+	*Feature* Added scrollbars to the Mode 7 Scene Editor so Tilemaps with more than 1 screen can be edited properly.
+	*Feature* The Save Editor, Message Box Editor and Mode 7 Scene Editor can now remain open while doing other stuff in RF, instead of having to be closed first.
+	*Feature* The Message Box Editor now shows a grey box around the dimensions of the selected Message box.
+	*Bug Fix* Fixed a small graphical bug with the box in the Level Editor that occured when copying a chunk to the top left, then releasing and copying a new chunk to the bottom right.
+	*Bug Fix* Fixed an error which made it possible to adjust the FX1 Liquid Height while editing Scrolls.
+	*Feature* Added the ability to quickly flip multiple tiles in the Level Editor using the arrow keys. Pressing an arrow key once will flip the current tile in that direction. Double tapping quickly will flip every tile within the target box with each other.
+	*Feature* Flipping the top of a Door tile in the Level Editor now adjusts the BTS of the tile accordingly to make the door open in the correct direction.
+	*Feature* H/V Copy tiles now draw a thicker border only on the side they copy from, instead of both sides. Also brightened the colours to make them much easier to tell apart.
+	*Feature* The Show Tile Layer Priority cycle is now "No Tiles" > "No Blank Tiles" > "All Tiles".
+	*Feature* Save Screenshot To .BMP now shows what the Tile Size will be in the exported screenshot.
+	*Bug Fix* Exported Tileset Palettes now have an underscore before the Tileset index, to keep consistency with other exported Tileset files.
+	*Feature* Added "Show Special BTS Tiles" to Preferences > View. When this is enabled, BTS like Shot / Bomb / Crumble tiles will draw in the Level Editor with the appropriate graphics. If disabled, only the BTS outlines / numbers are shown.
+	*Feature* Moved "Snap Enemies To Grid" and "Move Possessors Together" out of the View section of Preferences, as they aren't really a 'View' setting.
+	*Bug Fix* You can now only type hexidecimal values into text boxes in the PLM and Enemy Editors, excluding the description boxes.
+	*Bug Fix* Removed some debug code related to Tile Priorities in the Tileset Editor.
+	*Bug Fix* Ctrl+S can now be used to quickly save the Tileset Editor after changing the Tile Priority, rather than having to click back onto the Tile Table.
+	*Bug Fix* Fixed a bug that caused Brinstar, Wrecked Ship and Ceres to load without a map if you load QuickMet while Reveal All Area Maps in the SRM Settings was enabled.
+
+Version 0.86
+	*Bug Fix* Pressing Esc while in the Enemy or PLM Editors no longer crashes RF.
+	*Feature* Changed how RF's settings were saved. Instead of having one SMILE.ini file, there are now two (RF_Config and RF_Settings). RF_Config contains everything for the position of RF, what windows are open, which ROM was previously loaded, default emulator/patcher, etc. RF_Settings saves all the preferences and settings selected in RF (with the exception of Quickmet settings, which are stored in "/Files/TestRoom/QuickMet.ini").
+	*Feature* RF now remembers the previous position of the Enemy and PLM Editors, even after closing.
+	*Bug Fix* Fixed a crash that occured when using the Palette Editor while Auto Save Settings was enabled. Possibly caused by this current update? Either way, it happened before, now it doesn't.
+	*Feature* Added Show Enemy / PLM Boxes to Preferences > View. Enabling this will draw a grey box around an Enemy or PLM when you move the mouse over it.
+
+Version 0.85
+	*Bug Fix* Corrected an error which caused Scroll data to always save to bank $8F, even if it had been repointed.
+	*Feature* F9 now shows the Tile Priorities for the current layer. A small red and white box will be drawn over each tile that would be drawn OVER Samus in-game. RF will ignore any 8x8 tile which does not have any pixels that would be drawn over Samus, even if it has higher priority (eg, blank Air tiles).
+	*Feature* Moved the Import / Export Palette buttons in the Tileset Editor into the Menu. Replaced them with a small label that tells you the current palette index selected.
+
+Version 0.84
+	*Bug Fix* Fixed a PLM breaking bug that occured when changing the values for some PLM expansions. Also added a tool into the Debug menu to scan for any errors caused.
+	*Feature* Added an alert message to the Save Station editor, informing users that Save Station indexes $08 and higher don't work by default, and asks if RF should allow them to be used. Clicking "Yes" will change $20D0C from 29 07 00 to 29 1F 00 (AND #$0007 to AND #$001F).
+	*Bug Fix* Fixed a crash that occured when importing Special GFX in the Tileset Editor.
+
+Version 0.83
+	*Bug Fix* Fixed an error which caused rooms to be moved when mousing over the Map Editor if the M key had been pressed at any point, instead of only while held.
+	*Bug Fix* Fixed a calculation error which allowed RF to expand a ROM past 8MB.
+	*Feature* The Expand ROM tool now brings up a small window from which you can select how many banks to add in one go, rather than having to continuously click the menu to add multiple banks. 
+	*Feature* Added a variation of the alert message for Expand ROM, informing if only part of the banks were added.
+	*Feature* Renamed the Undo / Redo menus to Undo / Redo Tile Change.
+	*Feature* Added a tool to allow RF to reload the previously loaded Clipboard, useful if you're copying sections from other rooms but accidently copy a random section. Ctrl + Shift + Z will reload the previous Clipboard, while Ctrl + Shift + Y will go back to the new Clipboard.
+	*Feature* Added Reload Previous Clipboard into the Tools menu. It's caption will switch depending on whether RF is using the previous Clipboard or the current one. 
+
+Version 0.82
+	*Bug Fix* The Import / Export .BIN options now read / write to the correct position in the ROM.
+	*Feature* Added an Import / Export option for compressed ROM data.
+	*Bug Fix* Corrected an error with the alert message when making a Large Area To BMP, which caused the action to always be cancelled due to only the "OK" button showing.
+	*Feature* SMILE RF will now show an alert message when an Area To BMP has been completed.
+	*Feature* Renamed "Save Bitmap" in the Tools menu to "Save Screenshot to .BMP" to make it more obvious what these menus do.
+	*Bug Fix* Auto Save Settings now only saves once every ~5 seconds, rather than several hundred times a second. This was a due for a rewrite for a long time, but it was very old code which I'd forgotten about.
+	
+Version 0.81
+	*Bug Fix* Fixed a crash which occured when exporting Room Details if there was a corrupted MDB or unknown MDB State. Unreadable rooms are marked as unreadable in the exported text file.
+	*Bug Fix* Clear Room Tilemap now updates the current room size if enabled.
+	*Bug Fix* The Mode 7 Editor now correctly exports the GFX instead of creating a blank file.
+	*Feature* When searching MDB entries, using "Append" will now sort all newly found MDB entries at the bottom of the MDB List numerically.
+	*Bug Fix* Updated the link for the RF Help Guide to reflect the new address on Metroid Construction.
+	
+Version 0.80
+	*Bug Fix* Fixed an incorrect Message match for the Area To BMP (Large) option.
+	*Bug Fix* Fixed an error which caused the Task Log to remain hidden after it was opened and then closed, due to being moved to the Help section. 
+	*Bug Fix* Removed .BMP files from the file types list when importing Palettes in the Tileset Editor, as no code existed to extract the palette data from BMP files.
+	*Bug Fix* Opening a new ROM will now check the validity of rooms at the start of the MDB list, and skip corrupted Room Headers. RF already did this when automatically opening the previous ROM.
+	*Feature* Save Stations can now be edited. Open through Tools > Special Editors > Save Station Editor, or through the PLM Editor with a Save Station PLM selected.
+	*Feature* If the Save Station Editor is opened via the PLM Editor, then an option becomes available to enter values relevent for the current position of the Save Station PLM in the room. You may need to play around with these anyway if the Save Station is on the edge of a screen.
+	*Feature* The Save Station Editor can automatically find a matching Door DDB to the current room to use as a Load Point. RF validates this door by checking the Door Direction byte (should be between 00 and 07), and the Door ASM pointer (should be 0000 or 8000-FFFF). If the current room was entered by travelling through a door in RF (and not via the MDB dropdown list), then the DDB for that door will take priority over any others.
+	*Bug Fix* Removed the Set Load Point option from the Door Editor, as it was made redundant by the new Save Station Editor.
+	*Bug Fix* Fixed an error which caused the shortcut to force open a room via door to stop working.
+	*Feature* Greatly increased the timer for info showing in the Level Editor Titlebar up to ~10 seconds.
+
+Version 0.79
+	*Bug Fix* Fixed an issue which caused Scroll PLM previews to always be loaded from $8F when hovering over a Scroll PLM.
+	*Bug Fix* Fixed a mistake which caused the Current Tile Size to stop working from when I added support for comments in the Data files.
+	*Bug Fix* Fixed a couple drawing issues with certain slopes while flipped.
+	*Bug Fix* Removed some code which displayed enemy's coordinates in the main window title when dragging an enemy. It was only there while I was testing some stuff, but I forgot to remove it.
+
+Version 0.78
+	*Bug Fix* Changed the A/B Palette Holder lines in the Tileset Editor to not show a letter, to avoid any possible confusion that these lines might represent lines A and B in the full palette.
+	*Feature* The FX Editor now displays both dropdown options for FX Transparencies at all times. Also added a small bit of info to the Animated Tiles / Palette options section about them being Area dependent, mainly to fill the extra space.
+	*Feature* Changed how comments are used in "level_entries.txt", "tileset_entries.txt" and "mdb.txt". Comments can now be written directly after an entry on the same line (no symbol required). Comments can still also be entered on a new line by starting with the single quotation mark '.
+	*Bug Fix* Fixed an incorrect Tileset Entry for the palette of Tileset 01, and removed a duplicate entry. New file can be downloaded from "http://sadiztyk.metroidconstruction.com/RF/Files/tileset_entries.txt"
+	*Bug Fix* Brightness changes now update in the Tileset Editor correctly.
+	*Bug Fix* Exported Palettes in the Palette Editor now have a filename extension for YY-Chr and FaTileTy. 
+	*Bug Fix* Fixed an error which caused exporting palettes from the Palette Editor to show the file info in the Tileset Editor titlebar instead.
+
+Version 0.77
+	*Bug Fix* Saving the Scroll PLM Editor now saves the termination byte ($80) to the ROM when no scrolls would be changed by the PLM.
+	*Bug Fix* Fixed a crash which occured when dragging PLMs offscreen up or left, which resulted in an overflow as the coordinates wrapped around.
+	*Bug Fix* Fixed a draw issue with Slope $14 (the little corner slope) not drawing the lower boundary line when flipped horizontally.
+	*Bug Fix* Fixed an error which caused the Music lists to get re-added to the dropdown boxes each time you opened a new ROM.
+	*Bug Fix* Changed how Auto Focus worked slightly to immediately give focus to the correct Control in a Form, even if that Form already has focus.
+	
+Version 0.76
+	*Bug Fix* Removed some missed debug messages I added in the previous update while testing the Level Editor which would get very annoying, very quickly. 
+	*Bug Fix* Made the Current Room Size show immediately in the Level Editor if RF starts up with it enabled, rather than after a short delay.
+
+Version 0.75
+	*Feature* Added an option to unlock tile layers (in the Debug menu for now). While enabled, RF allows Layers 1, 2 or BTS to be enabled and disabled independently of each other, rather than always showing at least 1 Tile Layer or only showing BTS on Layer 1.
+	*Bug Fix* Undo / Redo now correctly updates the Current Room Size again.
+	*Bug Fix* Fixed a bug which caused Scrolls for PLMs to be saved to $8F. They now save to the correct bank defined in the ROM. 
+
+Version 0.74
+	*Bug Fix* Fixed an error with the palette displaying incorrectly in 8x8 Tilesize view when there was no Layer 2.
+	*Bug Fix* Changed the filenames of exported BMPs so different screenshots won't overwrite each other.
+	*Bug Fix* Fixed a DLL name error which caused a crash when changing the Save RAM path.
+	*Bug Fix* RF now checks both Level and Map changes before resetting the change flags. Previously, if changes had been made in both, not saving Map changes and cancelling on the Level changes would make RF think no changes had been made in the Map, even though it hadn't been saved (and it wouldn't ask again unless further changes were made).
+	*Bug Fix* Fixed an issue that occured if you changed the Level Entry for a room and saved while Show Current Tile Size was enabled, the current size would continue to display the previous available size.
+	*Bug Fix* Fixed a file number issue which caused the "Layer 1 Force Enabled" message in the Level Editor title to not appear if Show Current Tile Size was enabled, due to it also using the [ROMName].bin that Level Data uses.
+	*Bug Fix* Fixed an error that occurred if both Data Watchers triggered at once, which caused the second one to overwrite the first.
+	*Feature* Added tooltip text to all the debug options in RF.
+	
+Version 0.73
+	*Feature* Reveal Area Maps in the QuickMet Settings now reveals the map in the Minimap / HUD as well.
+	*Bug Fix* Disabled entering BTS values via the keyboard while in 8x8 Tile Size view, or while Layer 1 is hidden.
+	*Bug Fix* Fixed a bug which made selecting tiles from Layer 2 copy the BTS values (but not TileType) from Layer 1.
+	*Feature* Horizontal / Vertical copy BTS now have an extra border along 2 of the sides to show whether it's a horizontal or vertical tile.
+	*Feature* Brightened the colours of Horizontal / Vertical copy BTS and Fool X-Ray BTS to make them easier to see.
+	*Bug Fix* Fixed an error which caused saving the palette to incorrectly save the CRE TileTable instead.
+
+Version 0.72
+	*Feature* Added a small delay to Auto Focus when using the Tab key to switch windows, so it wouldn't immediately switch back if the mouse was over a window. Also increased the time for Auto Focus slightly.
+	*Bug Fix* Auto Focus now cancels if you move your mouse onto another window, then quickly back to the current window, rather than switching focus between them.
+	*Bug Fix* Fixed a bug which made it so pressing M to move a room in the Map Editor wouldn't work unless you were also moving the mouse.
+	*Feature* Right-clicking the Palette numbers around the large 8x8 Tile Preview now rotates backwards through the palettes.
+	*Bug Fix* Fixed an error when importing SCE Tilesheets which caused RF to break the Tileset and crash when you attemped to load it.
+	*Bug Fix* Adjusted the Keydown Event for Arrow keys in the Tileset Editor Tile Table. It's a bit slower, but far more responsive when tapping a key repeatedly.
+	*Bug Fix* Fixed a bug with FocusTaker which caused the Keyboard Events in the Tileset Editor to stop working on certain tiles until you reclick it.
+	*Feature* Added an option in the PLM / Enemy Editor to select the default PLM / Enemy types when adding PLMs or Enemies to a room.
+
+Version 0.71
+	*Bug Fix* Fixed an error which caused saving the PLM Info text would cause RF to write a blank file instead.
+	*Bug Fix* Fixed a bug which cause the PLM Index search hide all enemies in the room.
+	*Bug Fix* Functions which automatically open the Task Log now check the menu as well, as previously it wasn't being checked and you had to click it twice to hide the Task Log.
+	*Bug Fix* Updated how palettes are exported/imported to fix a bug caused by palette headers of different formats.
+
+Version 0.70
+	*Feature* RF now checks the ROM to find the correct Scroll Data bank.
+	*Feature* File Compare can now check two ROMs of different sizes more effectively, and marks bytes that don't exist in a shorter file with "--" instead of "00". This makes File Compare slightly slower though.
+	*Feature* File Compare's completion % now shows in the main window title bar while in progress.
+
+Version 0.69
+	*Feature* Added an option to restore the Tile Table defaults to the entire room tilemap in the Tools menu. You'll need to put square slopes back in, fix Door BTS and reapply any hidden Shot / Bomb blocks. This can be undone.
+	*Bug Fix* The Tile Table default files in /Files/Menus/ are now renamed to use the hex value directly from the Tileset dropdown box to make it easier to tell which file is for which Tileset.
+	*Bug Fix* Fixed a calculation error left behind accidently while testing PLM instructions which made Expansion PLMs read the wrong values.
+	*Bug Fix* Apply ASM Patch now adds a Log entry.
+	*Feature* Added an option to quickly reapply the previous patch used (useful with ASM files at least). This option only becomes available after applying an ASM or IPS patch.
+	*Bug Fix* Fixed a small positioning error in the Tileset Editor tilesheet so the selection marker couldn't scroll off the tilesheet.
+	*Feature* The selected tile in the Tileset Editor Tile Table can now be moved around with the keyboard arrow keys.
+
+Version 0.68
+	*Bug Fix* Fixed a crash when clicking the Map Editor options caused by an invalid array index.
+	*Bug Fix* Fixed a calculation error when checking the previous compressed size of data, causing it to show 1 less than it should.
+	*Feature* Tilesets now reference /Files/Data/tileset_entries.txt when saving data in the Tileset Editor, to check if it might overwrite something. Info is displayed in the titlebar.
+	*Feature* RF now checks Tileset sizes for palettes and tiletables, and warns if you will overwrite something.
+	*Feature* Added a timer for info in the Tileset Editor.
+	*Bug Fix* Fixed an error which caused the current Room Size display to show incorrectly if it was enabled and then disabled.
+	*Bug Fix* Current Room Size now updates each time a tile is placed while dragging, instead of only when the mouse button is lifted. It also updates correctly when using Undo / Redo.
+	
+Version 0.67
+	*Bug Fix* Fixed an error where PLM Search wouldn't open the Log afterwards, caused by moving the menu for the Log.
+	*Bug Fix* Fixed an error with Key State events which caused windows to open or close after Ctrl was only pressed, not held.
+	*Bug Fix* Fixed a crash which occured when attemping to paste a tile via Ctrl V in the Tileset Editor before copying a tile.
+	*Feature* Added an option to show how much space would be used by the room if it were to be saved at that moment. Preferences > Show Current Room Size.
+
+Version 0.66
+	*Bug Fix* Disabled previewing Scroll PLM changes when Scrolls were hidden, to fix a small visual bug.
+	*Bug Fix* Fixed a small visual glitch when placing tiles while Layer 2 was hidden.
+	*Feature* Ctrl + F1-F6 now open / close main RF windows.
+	*Bug Fix* RF now shows in the Taskbar even if it doesn't load as the focused program.
+	*Bug Fix* Fixed an Enemy / PLM positioning bug in 24x24 Tilesize.
+	*Feature* RF can now save and load a custom Mode 7 Tile Table to use in Mode 7 rooms via the Tile Table window.
+	*Feature* The Mode 7 Tile Table now displays which sections of the Tilesheet are used in the whole 16x16 tile.
+	*Bug Fix* Made a small change to the update files which should fix RF alerting that an update was successful when it hadn't updated at all.
+
+Version 0.65
+	*Feature* Added an option which enables / disables copying the current palette from the Tilesheet when dragging tiles in the Tileset Editor.
+	*Bug Fix* Removed the duplicate menus in the Tileset Editor for exporting / importing palettes.	
+	*Feature* Special GFX preset addresses are now read fully from "/Files/Data/special_gfx.txt".
+	*Feature* Added the option in the Special GFX dropdown menu to export custom addresses, and removed the Export All function as it wasn't useful for this situation.
+	*Bug Fix* Added a workaround for how Windows handles the Form_Unload events which caused RF to lose focus entirely when closing a window by clicking the X close button.
+
+Version 0.64
+	*Bug Fix* Fixed a crash which occured when moving the mouse over the Tile Table or changing the Tile Table size.
+
+Version 0.63
+	*Bug Fix* Made it so the Clipboard Preview triggered Auto Focus even if the full clipboard wasn't being used.
+	*Bug Fix* Fixed a small visual glitch in the Level Editor where the tile selection box left white pixels in the Level Editor while no tile had been selected in the Clipboard.
+	*Feature* Brightened the colour of the blue scroll areas, making them easier to see.
+	*Feature* Scroll areas now have a thicker border while in 8x8 Tilesize view, so they're easier to see against the tiles behind them.
+	*Feature* Scroll PLM changes can now be edited in RF. Click the Edit PLM Scroll Data button from the PLM Editor. 
+	*Feature* Added a bit more info to the PLM Editor for some PLMs.
+	*Bug Fix* Increased the search limit for PLM instructions, as the previous limit ($64 bytes) was too short for RF to detect the Boss Door instructions properly. They can now be edited like other doors.
+	*Bug Fix* Fixed an error with Mode 7 Tileset detection which made Kraid's tileset incorrectly flag as Mode 7.
+	*Bug Fix* Fixed a palette header error which made exported palettes for YY-Chr and FaTileTy save in the wrong format.
+	*Bug Fix* Fixed a small visual bug where the Menu Bar was misaligned if RF loaded without a ROM (by holding Esc) while a section of the Tiles & BTS page was minimized.
+	*Feature* Changed the ToolTip for PLMs and Enemies slightly.
+	*Bug Fix* Fixed a bug which broke changing the height of FX liquids with Shift in the Level Editor if you enabled the shortcut while dragging an Enemy or PLM.
+	*Feature* Moving the mouse over a Scroll PLM for a short while now lets you preview Scroll PLM changes. This can be toggled via Preferences > View > Show Scroll PLM Changes.
+	*Feature* RF can now apply .ASM files (by piggy backing off another assembler). This also means you don't need to keep your ROM in the same directory as the Assembler anymore.
+	*Feature* RF now automatically creates backups of a ROM before applying an IPS or ASM file. The backup is stored in the \Temp folder.
+
+Version 0.62
+	*Feature* Added alert messages to the Area to Bitmap options warning that it can take a while and produces a large file.
+	*Feature* Added temporary room saving to many functions which reload rooms (Area to Bitmap, Export Room Details, PLM Index Search). Any unsaved changes to a room are saved internally and restored after, but changes are not saved to the ROM.
+	*Bug Fix* Fixed a bug which potentially made Alert Messages not remember the option chosen if they're set to not show again.
+	*Feature* The Enemy/PLM values next to the sliders in the Room MDB page now use decimal values, because hexidecimal make no sense in that situation.
+	*Bug Fix* Fixed a crash which happened if you tried to load a Log file when no previous Log had been saved.	
+	*Feature* Reformatted the Export Room Details text file to make it easier to read.
+	*Bug Fix* Fixed a crash which occured when clicking in the SCE section of the Table in the Tileset Editor.
+	*Bug Fix* Made the Clipboard Preview image invisible by default when loading RF, as it has no use until a tile has been selected from the Level Editor or Tile Table.
+
+Version 0.61
+	*Bug Fix* Fixed an error which caused entering QuickMet think a room had been saved, and save warnings would no longer trigger unless further changes were made.
+	*Bug Fix* The '=' key now sets an undo/redo state correctly.
+	*Bug Fix* Disabled the Windows menu when no ROM has been loaded. It was left enabled by accident during testing in a previous update.
+	*Feature* The brightness keyboard shortcuts now work from within the Tile Table.
+	*Feature* Added a 32x32 view size for the Tile Table by popular request. Tile Size can be quickly changed with the Home/End keys through the Tile Table, in the same way as the Level Editor, or via the Preferences > View menu in the main window.
+	
+Version 0.60 (Mandatory Update)
+	*Bug Fix* Fixed a few security weaknesses with how RF connects to the internet.
+
+Version 0.59
+	*Bug Fix* Fixed a bug which caused RF to crash when opening a new ROM without any previously loaded settings.
+
+Version 0.58 (Public Release)
+	*Feature* Moved the Log to the ? (Help) menu and renamed it "Task Log".
+	*Bug Fix* Fixed an error which made it possible to copy the same door multiple times and flood the Clone Door list.
+	*Bug Fix* Fixed an error which made it so hiding oversized room warning could result in a default "Yes" flag being set, so saving would no longer check level size at all.
+	*Feature* Added saving and loading for Task Log entries.
+	*Feature* The Task Log is now resizable.
+	*Feature* Changed the shortcut keys for layers F5-F9 down one value, as it's highly unlikely F4 will ever be used. F9 has been reserved for something which may come in the future.
+	*Feature* Rearranged the Map Editor options a bit, to make editing slightly easier.
+	*Feature* Changed a couple descriptions in the Enemy Editor to make them easier to understand.
+	*Feature* The Tab key can now be used to cycle through open RF windows. Useful if you have Auto Focus disabled, or if a smaller window gets hidden behind a larger window.
+	*Bug Fix* Undid the change which made the updater wait before opening the change log. It now opens immediately after being downloaded (so you can read it while the main .exe is downloaded).
+	*Feature* Added Tiletype previews for Air Shot and Air Bomb types, and also touched up some other images (will be updated in the final package as the images are saved externally).
+	*Bug Fix* Reports sent via the Bug / Feedback window are now sent asynchronously, and won't make RF appear to hang.
+	*Feature* Added a warning message when loading the Bug / Feedback report window informing the user that Windows Firewall can block SMILE RF from sending reports.
+	
+Version 0.57
+	*Bug Fix* Fixed a check which caused the QuickBTS previews to incorrectly flip when flipping the Slope BTS.
+	*Feature* The Overwrite checkbox in the Pointers section is now checked by default.
+	*Bug Fix* Fixed a bug which caused the Enemy list in the Enemy Editor to lose focus when using the arrow keys to scroll.
+	*Feature* Added support for JAM's Spazer + Plasma patch into the Enemy Vulnerabilities table.
+	*Feature* Room scrolls now draw bright red if a room has an invalid scroll pointer.
+	*Bug Fix* Fixed as bug which made copying / placing tiles in the Mode 7 Editor not work for tilemaps 1-3.
+	*Bug Fix* Fixed the Mode 7 Editor zoom preview.
+	
+Version 0.56
+	*Bug Fix* Changed the Hex Conversion in the Tileset Editor to RGB insterad of BGR.
+	*Feature* Changed how Mode 7 Tilesets are detected. It's now based on total decompressed size of any tileset, rather than checking specific tilesets.
+	*Bug Fix* Switching to a Mode 7 Tileset in a room will now immediately load the Mode 7 graphics and tilemap, without having to reopen the room.
+	*Bug Fix* Fixed a bug which caused the Enemy Weakness list to lose focus while scrolling through it, so you'd have to reclick it to continue scrolling.
+	*Bug Fix* The Edit BG option is temporarily disabled, as the code for it isn't finished anyway.
+	*Feature* The update program now waits until it's fully downloaded the new .exe before opening the change log.
+	
+Version 0.55
+	*Feature* Added the SMILE RF icon to the About RF form.
+	*Bug Fix* Fixed the zoom preview in the Message Box Editor.
+	*Bug Fix* Updated the scrolling limits for all zoom previews as they were previously cutting off the right and lower most pixels.
+	*Feature* Zoom previews now show the relevent Tilesheet when moving the mouse over them.
+	*Bug Fix* Added an exception check into the Palette Editor in case code had been added to change how the Charge Release palette was loaded.
+	*Bug Fix* Fixed an error which caused ExLoROM SNES addresses to show the incorrect PC address in the Conversion window.
+	*Bug Fix* Fixed the TileTable editing shortcuts in the Tileset Editor, and also made them require Ctrl held as well, to keep the shortcuts uniform with the Level Editor.
+	*Bug Fix* Fixed a crash which occured when switching to an alternate Event or Boss state in a room.
+	
+Version 0.54
+	*Bug Fix* Made some adjustments to how the Metroid Buddy finds enemies to hunt.
+	*Bug Fix* Added some checks to the Ship's AI, so RF won't overwrite the Ship's landing position if the code for it has changed.
+	*Bug Fix* Fixed the zoom preview in the Map Editor.
+	*Feature* Rearranged the Level Tile Size menu a bit to make it more obvious that the 8x8 Tile Size is for editing scrolls.
+	*Bug Fix* Made it so the Default Tile Table values could only accept hex values in the text boxes.
+	*Bug Fix* PLM and Enemy Editors now show up in the middle of the Level Editor instead of elsewhere onscreen.
+	*Feature* Added in the Bug Report / Feedback system.
+	*Feature* Adjusted the style and colours of a few description labels in several forms.
+	
+Version 0.53  (Emergency Update)
+	*Bug Fix* Fixed a major bug which caused Enemy positions to be way off.
+	
+Version 0.52
+	*Bug Fix* Removed a textbox from the Tileset Editor which was left over from testing the Hex to SNES Palette conversion.
+	*Bug Fix* Corrected an Update Flag check which was missed when reversing the flag previously.
+	*Feature* Added Ki-Hunter wings to the Possessor Enemy list.
+	*Feature* Holding ALT while moving an Enemy will prevent Possessors from moving together, if applicable.
+	*Bug Fix* Fixed all BTS outlines for 2x1, 1x2 and 2x2 sizes so they're drawn and removed only when the source tile is changed.
+	*Feature* The Event List in the SRM Editor now saves all data to "/TestRoom/QuickMet.ini", and correctly sets the Events in QuickMet.
+	*Bug Fix* Renamed the updating files to avoid the string "update.exe" triggering some anti-virus software. 
+	*Bug Fix* Fixed an error which caused the Level Editor target size to be wrong when selecting tiles in the Tile Table.
+	*Bug Fix* Fixed a bug which caused the Level Editor to always display 16x16 Tile Size when loading, regardless of which Tile Size setting was saved.
+	*Bug Fix* Fixed an error which caused Enemy positions to be wrong for TileSize 24x24.
+	*Bug Fix* Fixed an issue when drawing the Slope BTS Table at TileSizes other than 16x16.
+	*Bug Fix* Fixed an error which prevented larger Message Boxes from being editted properly.
+	
+Version 0.51
+	*Feature* Invalid Pointers for a room now show up in a single Warning Message when you try to save them, and can be ignored and saved anyway.
+	*Bug Fix* QuickMet now correctly sets the required Event Bits when testing a State triggered by the Boss Event.
+	*Bug Fix* Switched the flags for Check Update, so by default it's on.
+	*Bug Fix* Fixed an error which caused RF to think a room was corrupted if you changed a State's trigger type, then immediately saved the room twice in a row.
+	*Bug Fix* Fixed an Undo/Redo error with Clear Tilemap, where redo wouldn't clear the room after undoing it.
+	*Feature* Moved the option to Reset Alert Messages from Preferences to the Help(?) menu.
+	*Feature* Added a tool into the Palette Editor to change how many colours to display per palette line.
+	*Feature* Added an option into the Palette Editor to add an offset between palette lines.
+	
+Version 0.50 
+	*Feature* QuickMet settings are now saved to "/TestRoom/QuickMet.ini". This way you can have multiple different QuickMet settings for different ROMs, and you won't lose your settings if you delete the main ini file.
+	*Feature* RF now also checks for unsaved changes before closing.
+	*Bug Fix* Fixed the section open memory for the ROM page in the main window.
+	*Bug Fix* The PLM Editor now correctly displays the current PLM index in the title bar.
+	*Bug Fix* Fixed a bug where dragging from the Tilesheet to the Tile placer in the Tileset Editor always placed them as palette 0.
+	*Bug Fix* Fixed a crash which occured when saving the palette in the Tileset Editor.
+	*Feature* The Export/Import .BIN tool now adds an entry into the Log.
+	*Bug Fix* Fixed selecting tiles while moving the mouse with left button held on the Tile Table in the Tileset Editor.
+	*Bug Fix* Fixed the currently selected tile not updating when importing a Tile Table in the Tileset Editor.
+	*Feature* Removed the Palette Preview option in the Tileset Editor, and replaced it with a hex value to SNES conversion.
+	
+Version 0.49	
+	*Bug Fix* Made it so compiling an MDB List wouldn't add elevator platform doors to the MDB List, creating an incorrect room $7FFFF.
+	*Feature* RF can now expand a ROM past 4MB, and will convert a ROM to the ExLoROM format if required. 
+	*Feature* RF now correctly calculates a checksum for ExROMs. Some emulators do not have the correct memory mapping for ExROMs, so checksums may appear incorrect for those emulators.
+	*Feature* The Pointers window now shows ExROM pointers correctly, if applicable.
+	*Feature* The Pointer Conversion boxes can now convert between ExROM addresses, if applicable.
+	*Bug Fix* Fixed the Tile Preview in the Mode 7 Editor not updating.
+	*Bug Fix* Fixed an issue where opening a new ROM after making unsaved changes and choosing to save would save the changes to the new ROM, instead of the old one.
+	*Feature* Added a warning message when attempting to open a PAL ROM.
+	*Bug Fix* Auto Focus now only works if RF or one of it's windows has focus. This fixes the flashing taskbar effect in Windows.
+	*Feature* Added a Help(?) Menu item into the main window. Links in the About RF window are clickable and will open an internet browser to the applicable address.
+	*Bug Fix* Changing the Tileset no longer resets the scrolled position of the Tile Table.
+	*Bug Fix* Moved the Enemy DNA options around a bit to fix a button's text wrapping around.
+	*Feature* Holding CTRL while moving an Enemy will switch the Enemy Snap preferences. IE, holding CTRL while snap is disabled will snap the Enemy to the grid while it's held, and vice versa.
+	*Feature* Added a menu option in Preferences to reset all RF alert message memory.
+	*Feature* Added options to the Search MDB Entries tool, so you can either add new rooms to the existing MDB List or create a new one.
+	*Bug Fix* Fixed a bug which caused RF to overwrite Room States if you change to a different State with unsaved changes, then chose to save those changes.
+	*Feature* Rearranged some things on the last RF main page.
+
+Version 0.48
+	*Feature* You can now choose a custom Level Editor size. Also removed some of the less common sizes. Choices are now 2x1, 3x2, 4x3, or Custom.
+	*Bug Fix* Fixed an error which caused RF to incorrectly decompress Special GFX when saving them from the Tileset Editor.
+	*Feature* Added a small button in the PLM Info section of the PLM Editor to edit text in Notepad.
+	*Feature* Added support for the remaining Possessor Enemies.
+	*Feature* The Enemy Editor now displays which enemy index is currently open in the title bar.
+	*Feature* Added a button to export the details of all rooms into a text file.
+	*Feature* RF now reads Room State information from "/data/mdb_state.txt". Support for new states as been added, however the Room State section can't be used to edit custom states yet.
+	*Bug Fix* Fixed a crash which occured when RF attempted to open a corrupted room when loading. If the last room can't be reopened, RF will check the entire MDB to open the first room it can. In the event no rooms can be opened, it will unload the ROM so you can choose a new ROM.
+	*Bug Fix* Fixed some checks within the Message Boxes which caused them to keep appearing even after clicking not to show them again.
+	*Feature* RF can now warn you before reloading a room of unsaved level data changes.
+	*Feature* Added an option to enable or disable unsaved changes warnings.
+	*Bug Fix* Fixed an error which made changing the enemy ID manually in the Enemy Editor not load the appropriate info text file.
+	*Bug Fix* Quick BTS keys (F11 & F12) now properly set an undo/redo state.
+	
+Version 0.47 (Emergency Update)
+	*Bug Fix* Fixed a small error with the Enemy Editor which required you to right click twice on the Allowed Species to show details about an enemy the first time.
+	*Bug Fix* Realigned the FX height indicators with the room / Level Editor.
+	*Bug Fix* You can now move the FX liquid level in the Level Editor when holding Shift, even if the click originated on an Enemy/PLM.
+	*Feature* It's now much easier to add FX to a room with an FX Pointer but no FX Data. Adding $0000 or $FFFF to the Door FX list will add/remove FX data respectively.
+	*Bug Fix* Fixed a check which caused RF to replace the first byte of the ROM with $00 if the PLM pointer in a room was $0000.
+	*Bug Fix* Fixed a ROM breaking bug which destroyed compressed data when saving a Mode 7 room or a Tile Table.
+	
+Version 0.46
+	*Bug Fix* Fixed an error which cause Pointer Saving to not save PLMs or Enemies to the new location if Overwrite was checked.
+	*Feature* Added in a tool to quickly write a string of BTS Horizontal/Vertical Copy blocks, by holding Ctrl + Left Click and moving along the path in the Level Editor 
+	*Bug Fix* Fixed a ROM size check which caused RF to only add up to bank $FE.
+	*Bug Fix* Fixed an issue with BTS outlines being left after changing block types for larger than 1x1 BTS.
+	*Bug Fix* Made it so the Palette Sliders in the Palette / Tileset Editors update when pasting a palette or changing tilesets (or the currently selected palette changes for any reason).
+	*Bug Fix* Made it so Enemy Drops could be saved by clicking a button in the Enemy Editor or via Save DNA.
+	*Feature* Exporting an Enemy Palette now displays file info in the Log, rather than creating a message alert.
+	*Feature* RF will no longer Log multiple duplicate entries in a row.
+	*Feature* Changed how the Palette Holders in the Tileset Editor worked slightly. You can drag specific colours from the Palette Holders, or the entire line by dragging from the A/B buttons.
+	*Feature* You can now drag colours from the palette sliders to the Palette Holders in the Tileset Editor as well.
+	*Bug Fix* Fixed a small error which caused the FX Editor liquid height text box not to update when moving liquids in the Level Editor.
+	*Feature* Added a small button in the Enemy Info section of the Enemy Editor to edit text in Notepad.
+	*Feature* Right clicking an entry in the Allowed Species list in the Enemy Editor will now show the details about that enemy.
+	*Bug Fix* Fixed a bug with saving palettes in the Tileset Editor which could potentially overwrite random data.
+	
+Version 0.45
+	*Bug Fix* Fixed a crash which sometimes occured when closing RF. The solution isn't pretty. RF now kills it's own task ID via Shell.
+	*Feature* Added a shortcut to switch a Map Tile between hidden or revealed in the Map Editor by pressing "H".
+	*Feature* Added a warning message asking to save a map before reloading it or changing rooms.
+	*Feature* Changing the Room State no longer reloads the map.
+	*Feature* The Log's screen position is now saved.
+	*Feature* PLM Index Search now automatically opens the Log if a PLM is found.
+	*Bug Fix* Fixed a crash which occured if you attempted to clear multiple lines from the Log in succession.
+	*Feature* You can now view and edit message tilemaps in the Message Box Editor under Tools > Special Editors.
+	*Bug Fix* Fixed a calculation error with PLM Offsets which could cause an item to move way offscreen.
+	*Bug Fix* Fixed a ROMHeader issue with headered ROMs which made the Mode 7 Editor skip some GFX.
+	*Feature* Changed some of the exported file names when exporting a file (such a palettes, graphics, etc) to be more specific to the ROM they came from.
+	*Feature* Added an Import/Export option for Mode 7 Cutscene Graphics
+	*Bug Fix* Fixed a crash which occured when AutoFocus tried to bring focus to RF after closing a priority window (PLM/Enemy Editor for ex), while another application had focus.
+	
+Version 0.44  (Emergency Update)
+	*Bug Fix* Corrected an error which caused RF to attempt to open multiple rooms at once when scrolling through the room list quickly.
+	*Bug Fix* Fixed a bug which caused multiple timer-based functions (Keyboard shortcuts, Auto Focus, Level Editor Info) to stop working after opening a new room.
+	
+Version 0.43
+	*Bug Fix* Fixed a bug where setting Enemies or PLMs to 0 in a room and then saving wouldn't remove them from the Level Editor until the room was refreshed.
+	*Bug Fix* Fixed a small bug which caused Enemies to jump around very slightly when reloading a room.
+	*Bug Fix* Fixed a small bug which caused RF to not remember to display hidden areas in the Map Editor.
+	*Feature* Undo can now be used when dragging BTS to the Level Editor, flipping a tile with arrow keys, or changing BTS values via keyboard.
+	*Feature* Increased Undo memory from 16 to 32.
+	*Bug Fix* Fixed an read error which cause RF not to read the second PLM Variable from ROM (Seraphim only).
+	*Bug Fix* Fixed a bug which caused TileTable Default BTS to not be saved properly.
+	*Bug Fix* Fixed a bug which caused the Enemy / PLM Editors to be lost behind other windows if RF is set to always show on top.
+	*Bug Fix* Added Auto Focus checks to some of the BTS menus and clipboard in the main window.
+	*Feature* QuickBTS is now saved to the .ini file.
+	*Bug Fix* Allowed the Tileset Palette to be saved while the brightness was higher than normal, as the related bug was fixed a LONG time ago.
+	*Bug Fix* Fixed an error which caused the Tileset Editor Tile Table to show the previous open Tileset, instead of the current one, when switching Room States.
+	*Bug Fix* Fixed a flip error when selecting a tile in the Map Editor.
+	*Feature* Added a Preview Palette button into the Tileset Editor, which shows the palette changes in the room and tileset without actually saving any changes.
+	*Feature* All Layer keyboard shortcuts (F1 through F9) now work globally while RF has focus. The Level Editor does not need to be the selected window anymore.
+	*Feature* Added an info MsgBox system back into RF. Each message box will display information about the error made, and has an option to not show again (some important ones don't). If the MsgBox is set to not show again, RF will remember the previous selection made (OK or Cancel), where applicable.
+	*Feature* Added Ebi and Dragon movement checks when moving possessor enemies together.
+	*Feature* Opening a corrupted room or unknown Event State now changes the Room and State list boxes to red.
+	*Bug Fix* Fixed a crash which occured during QuickMet if the SRM filepath was set to the /temp/ folder.
+	*Bug Fix* Fixed an error which cause the Level Editor Tilebar Info to get stuck if you focus on another window.
+	*Feature* Added a character check into the Custom folder to allow multiple similar Roms to use the same folder. Everything after (and including) an underscore "_" in the .SFC filename is ignored.
+
+Version 0.42
+	*Feature* Added 10 free bytes into the .ini file for later use. This will hopefully remove the need to delete the .ini file after certain updates.
+	*Bug Fix* Adjusted the selection of tiles in the Tile Sheet in Kraid's Tileset due to having a larger SCE Sheet and no CRE.
+	*Bug Fix* Fixed a problem with the PLM Offset adjustments not being read when saving a PLM.
+	*Bug Fix* Made it so duplicate usernames can't exist.
+
+Version 0.41
+	*Bug Fix* Fixed an issue with Pointer Saving which could cause the Level Data to not overwrite if the new destination would result in an invalid Level Entry (and thus not overwriting the data).
+	*Bug Fix* Fixed a crash which happens if you attempt to open a new ROM after cancelling a previous load or after RF cannot find the previously opened ROM.
+	*Bug Fix* Made the PLM Type List always show the selected PLM rather than being able to scroll out of bounds.
+	*Bug Fix* Changed some code which checked which windows were open when saving their positions on the screen, so now all window positions are saved regardless.
+	*Bug Fix* Fixed an issue with the Clipboard Flip options which could hang RF by making the Clipboard data indexes start at 0 instead of 1.
+	*Feature* Added a check for longer file names when referencing a file in the Log.
+	*Bug Fix* Fixed a crash when attempting to paste a tile in the TileSet Editor TileTable using the keyboard shortcuts. 
+	*Feature* Switching a TileSet in the TileSet Editor now updates the 8x8 Tile Preview as well.
+	*Feature* Added 'click and drag' scrolling to the Tile Table and Tileset Editor when using the mouse wheel button.
+	*Feature* Rewrote the FX1 Door Select options so you can switch between them easily at any time. Loading into a room through a door will automatically select the appropriate FX1, if it exists, or setup a new FX1 Door Select value.
+	*Bug Fix* Made it so the first new PLM / Enemy in a room would be refreshed if a room originally had 0 PLMs or Enemies.
+	*Feature* Added the current screen number to the Tile Info with "`".
+	*Feature* Added a second FX1 height indicator in the Level Editor on the right, and made them both wider and brighter.
+	*Bug Fix* Allowed the FX1 Height to be dragged to 0000 or below the room's height with Shift.
+
+Version 0.40
+	*Feature* You can now undo certain actions (like placing tiles) with Ctrl Z, or redo with Ctrl Y.
+	*Feature* Readded the "Clear Room Tilemap" tool due to popular request. Use of this tool can be undone via the menus or Ctrl Z.
+	*Feature* Removed the navigation arrows from inside the Tileset Editor and replaced them with Tilesheet GFX values for each part of a tile.
+	*Bug Fix* Fixed an error where it was possible for an easter egg to become stuck.
+	*Bug Fix* Slightly increased speed of room loading by removing duplicate loading routines.
+	*Bug Fix* Made it so adding PLMs or Enemies to a room automatically refreshed those new PLMs so their pictures would be updated. Previously the room had to be reopened.
+	*Bug Fix* Made the PLM Counter in a room revert back to 0 when opening a room with no PLM Pointer.
+	*Bug Fix* Fixed a file open permission error with FastRead (Anything that cycles through rooms very quickly like Index Search or Area To Bitmap).
+	*Bug Fix* Added a safeguard when opening a new ROM to close all open file handles.
+	*Bug Fix* Rewrote the PLM Index Search function so it could locate PLMs while remembering current unsaved changes to the current room's PLMs.
+	*Bug Fix* Fixed an annoying WindowState error which caused the main window to start minimized after updating.
+
+Version 0.39 
+	*Bug Fix* Fixed an annoying resizing issue in the main window when opening the program without opening a ROM.
+	*Feature* Added an Advanced FX1 Editor option to expand bits and allow full customization of FX1. A complete list of FX1 Types can be edited from "Data/fx1_entries.txt"
+	*Bug Fix* Fixed possible errors with previously open windows not reopening on load.
+
+Version 0.38
+	*Bug Fix* Fixed a crash when using the Create MDB List function.
+	*Bug Fix* Fixed the Mode 7 Level Editor so it can use the entire 128x128 tilemap, rather than only what the actual room size is.
+	*Feature* Changed how PLMs and Enemies are moved around the Level Editor, so the image preview is moved rather than a hitbox preview.
+	*Feature* Changed the function of a couple hidden easter eggs.
+	*Bug Fix* Fixed a crash which happens when attempting to open the PLM / Enemy Editor more than once while moving a PLM / Enemy.
+
+Version 0.37
+	*Bug Fix* Fixed a crash when clicking in the Tile Table.
+	*Feature* Removed the pointless 4 lines of grey GFX from the middle of the Tilesheet in the Tileset Editor.
+	*Feature* Extended the timer for info in the Level Editor title bar.
+	*Feature* Added some info for the last successful save's size when attempting to save a room that uses too much data.
+	*Feature* When saving rooms, if the new save size will take up less space than before, RF will wipe out the rest of the old data with free space.
+	*Bug Fix* Fixed a crash that occured when attempting to add a bank to a ROM already too big, then opening a new room.
+	*Feature* Added Tile Defaults to the Tile Table. Double clicking a tile will bring up a new window where users can choose default values for left or right clicks from the Tile Table.
+	*Bug Fix* Added a check for a valid FX1 pointer into the FX Editor and liquid height change shortcuts in the Level Editor
+	*Feature* Made the the Level Editor remain in the same scroll position when only changing Room States
+	*Bug Fix* Allowed the mouse wheel scroller to be used over Enemies or PLMs. The Clipboard target also moves over them instead of waiting on the side.
+	*Bug Fix* Fixed a bug which caused Enemies and PLMs to be redrawn as unknown objects when entering QuickMet in a ROM which uses a Custom folder containing Enemies or PLMs not found in the original.
+
+Version 0.36
+	*Feature* Tweaked a couple of position checks so you can copy tiles from anywhere if the mouse click originated on the Level Editor room preview, and placing tiles up to 1 tile outside of the room preview.
+	*Feature* Added a delay timer (about 1/2 second) to Auto Focus so the mouse can be dragged quickly across windows without them taking focus.
+	*Bug Fix* Made RF load up with no ROM selected if it attemped to open a ROM which no longer existed.
+	*Bug Fix* Fixed up some of the preset sizes for collapsing sections in each frame.
+	*Bug Fix* Fixed a bug which caused blank tiles not to refresh when disabling them in the Clipboard.
+	*Feature* Made blank tiles in the Clipboard flip as needed, rather than staying in the same relative place.
+	*Feature* Clicking on Enemies or PLMs now brings up the relevent editor immediately, rather than requiring another click. Split Ship option moved into Preferences.
+
+Version 0.35 
+	*Bug Fix* Fixed a serious bug which crashed RF when you try to edit a PLM or Enemy.
+	*Bug Fix* Made the PLM Editor load the PLM Info Text file when loading.
+	*Feature* Added a small GFX preview in the Enemy Editor.
+
+Version 0.34
+	*Bug Fix* Made the main window show in the task bar... again.
+	*Bug Fix* PLM Index Search now searches only for the selected PLM type.
+	*Bug Fix* Fixed some slope drawing tables in the Level Editor so they all take the current tilesize into account.
+	*Bug Fix* Made yellow slopes actually draw to the level editor.
+	*Feature* Added a check for mandatory updates. Probably won't ever be used on my end, but it's there just in case.
+	*Bug Fix* Tweaked the Enemy / PLM movements so you could drag them from anywhere more effectively, with much less jumping around.
+	*Bug Fix* Fixed the Enemies To Clear Room value in the Enemy Editor so it's read/saved correctly.
+	*Bug Fix* Made the color sliders in the Enemy Palette Editor update when changing palettes.
+	*Bug Fix* Fixed the ever-expanding PLM image glitch caused by not setting the stretch to default when loading a PLM GIF.
+	*Feature* Utilized a function (InHex(Value, Length)) to easily get hex values for any integer or byte, reducing overall .EXE size.
+
+Version 0.33
+	*Feature* Added a bit more info to the Map Editor and moved a couple things around. 
+	*Feature* Zoom previews in Map Editor and Mode 7 Editor now scroll smoothly instead of tile by tile.
+	*Bug Fix* Fixed the zoom preview in the Map Editor so it updated properly when flipping tiles with arrow keys
+	*Bug Fix* Fixed 'Snap Enemies To Grid' so it would work right when RF is opened while it was enabled.
+	*Feature* Removed a few useless preferences from RF. 'TransparentBTS' and 'Show PLM Boundaries' are now gone forever.
+	*Bug Fix* Changed how PLMs were moved around in the Level Editor so they don't jump around if they're bigger.
+	*Feature* Changed PLM GIF loading so they display with the PLM X/Y at the top left of the PLM, rather than the middle.
+	*Feature* Added the DDB of each door into the door list in the Door Editor, and moved almost everything around.
+
+Version 0.32
+	*Big Fix* Moved around the frames in the Enemy Editor so the DNA Options are visible on every page.
+	*Feature* Changed how Fades and Heat Glows are calculated in the Palette Editor. They now apply the slider changes to only the target palette, and gradually change to it, rather than applying the change for each palette.
+	*Feature* Removed "Copy Rows" in the Palette Editor and replaced with "Transition", which gradually changes the first palette into the last palette without changing target or source (essentially just a fade, but without using the sliders)
+	*Bug Fix* Moving rooms with "M" in the Map Editor and then saving the map will now save the room's new position to ROM.
+	*Bug Fix* Allowed any character to be typed into the Enemy Editor info / description box.
+
+Version 0.31
+	*Feature* Added a potentially useless bit of info to the Clipboard when you have Mode 7 enabled (in a Mode 7 Room) informing you to use the Tile Table instead.
+	*Feature* Made the Tile type previews more visible, and brightened the colors of some tile/flip previews.
+	*Feature* Made BTS and Tile type previews only appear when Layer 1 is enabled. H/V Flip previews now apply only to the dominant layer.
+	*Feature* Added a check so you cannot disable Layer 2 if Layer 1 is already disabled, and vice versa.
+	*Feature* Removed some of the pointless buttons/options in the Tileset Editor (Autosave Palette, Black/White palette).
+	*Feature* Made copying/saving palettes easier with the DragDrop Palette Holders in the Tileset Editor.
+
+Version 0.30
+	*Feature* Changed some of the bitflags for the first byte in the rom (1 - Load MultiCRE from BitFlag Pointer, 2 - Load MultiCRE from Room Index, 4 - Decrypt Level Data on open)
+	*Feature* Added palette dragging/copying into the Tileset Editor, Palette Editor and Enemy Editor. Dragging from the colored palette numbers will copy the current color.
+	*Bug Fix* Fixed an error with room screen positions when entering a room from a door and then selecting rooms from the MDB/Room State list
+	*Bug Fix* Added a check into the H/V tile flip display so it won't screw up if you click them in a specific order
+	*Bug Fix* Fixed an error where entering QuickMet in a room over it's data limit after a cancelled save would cause a crash
+
+Version 0.8 (OLDER VERSIONS)
+	*Feature* RF can now uniquely encrypt level data and other pointers in a room to prevent cheating. You will need to put code into your own ROM to decrypt it in-game though.
+	*Feature* Added Clipboard options to copy/paste Graphics or BTS without the other. 
+	*Feature* Implemented importing and exporting of .bin files.
+	*Bug Fix* Fixed the Data Watchers so they work independently from each other.
+	*Bug Fix* Fixed a bug where the PLM Editor would crash RF when trying to edit a door or scroll PLM (and probably others).
+	*Feature* Added a Mode 7 editor for the Title Screen BG and Samus's Ship / Ceres Station
+	*Feature* Added some more tile info in the Map Editor to make things easier for ASMers.
+	*Bug Fix* Fixed a problem in the Palette Editor where colours sometimes loaded from the wrong location
+	*Feature* Greatly increased the speed of placing tiles in the level editor. Removed all lag, even when placing huge chunks.
+	*Feature* Adjusted the size of some text boxes to make things more neat
+	*Bug Fix* Added a FastRead check into the Room State loader, so enemies don't flash on screen while performing a FastRead
+	*Feature* Changed how music tracks were loaded. All music tracks are now referenced from "/Files/Data/Music_Names.txt". Tracks not in list (but loaded through a room in RF) are temporarily added as "[Index] = ???"
+	*Feature* Added the option to have no music in a room via the Play Index drop down box "80 = Stop Music"
+	*Feature* Made the Tile Table builder automatically switch to the selected palette when dragging tiles from the Tile Sheet
+	*Bug Fix* Changed the Palette Editor window type so it's position can be read properly via the INI
+
+Version 0.7
+	*Feature* You can now edit Mode 7 tilemaps (aka Ceres)
+	*Bug Fix* Fixed the 'click & drag' scroller in 8x8 tilesize mode
+	*Feature* Added a 48*48 tilesize view
+	*Bug Fix* Removed a few missed message boxes in the Tileset Editor
+	*Bug Fix* Fixed an error with the PC/SNES address converter
+	*Feature* Mode 7 display is now saved in the INI
+	*Bug Fix* Made Open/Save dialog windows always show over RF, even when RF is set always on top
+	*Feature* Increased the speed of placing tiles in the level editor. Most noticable with huge chunks.
+	*Feature* Shift + Esc fail safe now moves every window of RF to the top left corner of the screen.
+	*Feature* Added a secret easter egg of some sort
+	*Feature* Added in basic FX1 editing
+	*Bug Fix* Made moving through doors scroll to the correct part of a room instead of always the top left
+	*Bug Fix* Fixed a runtime error "380" bug that kept popping up for some people, again, because of setting a map tile flag before loading
+
+Version 0.6
+	*Feature* RF now shows what rooms where the PLM index is found in the log when using the index search.
+	*Feature* You can now remove individual lines from the log
+	*Feature* Added a 'click and drag' feature to scroll around the Level Editor by holding down the mouse wheel button.
+	*Feature* Added a backup source for updates in case FTP fails (now uses dropbox as well)
+
+Version 0.5
+	*Bug Fix* RF will no longer crash when attempting to open a room with corrupted level data. Ever.
+	*Feature* Added a button to encrypt/decrypt all level data in a rom. Just an XOR #$FFFF for now. (19/1/13) Greatly boosted the speed that RF encrypts level data.		
+	*Bug Fix* Fixed the SRMPath options for QuickMet. Started working on the QuickMet options form
+	*Feature* Added a room generator. Randomly creates a basic room shape. Only works with Crateria tilesets atm. *Might be removed from public release*
+	*Feature* Added a button to locate every linked room ID in a rom
+	*Feature* Added 2 "Data Watchers". Can be used to watch a chunk of ROM data. If any byte changes, RF will tell you immediately.
+	*Feature* Added a button which can locate any index used by any PLM in any room. Results in the Log. 
+	*Feature* Changed how the ini file is saved and read to optimize it
+	*Feature* RF can now constantly save the preferences and INI file. No more crash resets. Click Autosave Settings in Preferences
+	*Bug Fix* Fixed up the map editor a bit. It now uses the correct GFX from $B68000, and loads the palettes used by the pause map, rather than area palettes.
+
+Version 0.4
+	*Bug Fix* Fixed some start up bugs due to how RF remembers roms and rooms
+	*Feature* Added a button to count how many doors are in a rom. Useless, but kinda cool.
+	*Feature* Changed around the main editor windows a bit
+	*Feature* Finished the background type/scrolling editor section in the main window
+	*Feature* Added expandable/collapsable sections in the main window
+	*Feature* Added some more options in the Tileset editor for copying 16x16 tiles or palettes
+	*Bug Fix* Fixed a bug with roomsizes when making a room longer horizontally and shorter vertically at once
+	*Feature* Added a preliminary Import/Export room tilemap feature, but not finished yet. Could be buggy, but works from the little I tested it.
+	*Feature* Added quick BTS number input for any hex character. Shortcuts for doors and quickmet changed to also require Ctrl held.
+	*Bug Fix* Tweaked how the level editor scrolling limits worked, so the level can't scroll past the size of the window.
+	*Bug Fix* Fixed changing the level editor size with a tilesize other than 16x16, and the scroll limits getting screwed up.
+	*Feature* Added options to shift the entire map in the map editor
+	*Feature* Allowed RF to force open a room via door (hold shift when entering the room) if the room header is not in the MDB list. The room ID will temporarily be added to the list, until RF is closed or a new rom is opened.
+	*Bug Fix* When saving a room, SMILE will notify of unknown space if the level entries file is wrong
+	*Feature* Added a new MetBuddy collision detection feature. Could have some fun by building mazes for it to escape?
+	*Bug Fix* Fixed the checksum recalculator. RF can now correctly get the checksum for any valid filesize.
+	*Bug Fix* Fixed opening a headered ROM by default (Last ROM opened)
+	*Feature* Changed how palette names were saved in the palette editor, rather than just naming everything "Samus.tpl"
+	*Bug Fix* Exporting palettes no longer fill the rest of the palette (256 colors) with black
+	*Bug Fix* Fixed Clear Room Tilemap and Fill Layer so they don't crash RF if you attempt it in a room with no layer 2
+
+Version 0.3
+	*Bug Fix* Added a check for horizontal room size expansion. Room tilemaps no longer get messed up when changing room sizes. New screens are drawn as empty tiles.
+	*Feature* Enemy/PLM +/- added to RF. Enemies can be set to 0
+	*Feature* Added a 24x24 tilesize view. Fixed tilesizes so enemies and PLMs can be placed properly.
+	*Bug Fix* Changing tilesizes no longer reloads the room
+	*Feature* Tilesize can be changed quickly via keyboard by pressing Home and End
+	*Feature* Completely remade the menu system in the main window
+	*Feature* Added a 6x4 Level editor size
+	*Feature* Added an Auto Focus option so you can turn off windows getting brought to top automatically when you move the mouse over them
+	*Feature* Added Always On Top option, so RF is never covered by other windows (doesn't apply to RF's own windows or other high priority programs)
+	*Feature* Remade the PLM editor
+	*Feature* Changed the dropdown list for BTS into a text box
+	*Feature* Added 2 "QuickBTS" boxes, which you can use to save slopes or special tiles to set to any tile with a single key press (F11 or F12)
+	*Bug Fix* Fixed a bug when you try to edit an invalid door BTS (BTS is too high for the room)
+	*Feature* Added a checksum recalculator for edited roms
+	*Feature* Can now save enemy DNA through the enemy editor
+	*Bug Fix* Fixed a bug where the enemy weaknesses weren't updating when changing enemies
+
+Version 0.2
+	*Feature* All windows separated: windows can be moved individually around the screen, closed and reopened at any time
+	*Feature* RF now opens the last room you had open prior to closing
+	*Feature* Windows remember positions in the screen
+	*Feature* Support for multiple MDB.Txt, LevelEntries.Txt, Enemies, PLMs, SpecialGFX.Txt, QuickMet.Bin, Menus per rom. Read from path\files\custom\[Rom name here]\*
+	*Feature* Enemy editor completely remade
+	*Feature* Made it possible to reorder enemies in the allowed list without having to remove and re-add enemies (just drag them around the list)
+	*Bug Fix* Shortcuts fixed in the level editor (saving, layer views, etc)
+	*Feature* Added a comment system into the MDB.txt file. Comments are 'marked like this' but must be on a new line
+	*Feature* Added a palette_entries.txt file to create custom list of default palettes in the SABS editor
+	*Bug Fix* Fixed copying tiles so you can copy from all directions
+	*Bug Fix* Fixed snapshots in the level editor
+	*Feature* Changed around a few menus to group them together better
+
+Version 0.1
+	*Feature* MultiCRE support. Support is enabled by setting bit 1 of byte $80:8000 in the rom. Address set by next 3 bytes
+	*Feature* Remade main windows
+	*Feature* Pointers in main window
+	*Feature* GFX editor remade
+	*Feature* Shortcuts added for saving, open, menus, etc
+	*Feature* Remade the SABS editor
+	*Feature* Changed the Wash out and Heat glow color functions to be more useful
+	*Feature* Clipboard preview is now slightly smaller to fit inside the window
+	*Feature* State Select chooser now in main window
+	*Feature* Moved map editor into a seperate window
+	*Feature* BTS highlights fixed. Fool XRay blocks draw purple (BTS $10+ draws bright red, unless table repointed). V/H blocks draw blue

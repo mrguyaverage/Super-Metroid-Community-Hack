@@ -1,0 +1,1 @@
+Provide your own copy of the (unheadered) vanilla rom here. This will be patched by the build process to produce the patched rom.

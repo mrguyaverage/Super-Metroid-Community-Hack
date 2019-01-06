@@ -1,0 +1,5 @@
+<Config>
+  <Projectdir>..\..\src\</Projectdir>
+  <Assembler>..\xkas.exe</Assembler>
+  <SMILEexe>..\SMILE RF\SMILE RF.exe</SMILEexe>
+</Config>

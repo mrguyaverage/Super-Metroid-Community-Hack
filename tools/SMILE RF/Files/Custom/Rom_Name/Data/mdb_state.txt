@@ -1,0 +1,11 @@
+'E5E6 = Standard' 02
+'E5EB = Door Matched' 06
+'E5FF = Tourian Boss' 04
+'E612 = Events' 05
+'E629 = Bosses' 05
+'E640 = Morph' 04
+'E652 = Morph & Missiles' 04
+'E669 = Power Bombs' 04
+'E678 = Speed Booster' 04
+'FFE9 = Hyper Metroid 15%' 04
+'C438 = Hyper Metroid' 04

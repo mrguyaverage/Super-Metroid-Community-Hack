@@ -1,0 +1,173 @@
+KEYBOARD SHORTCUTS
+	Level Editor:
+		[Ctrl + S]					Save room changes. If room size over limit, spamming this multiple times quickly will force save the room (ONLY if the save warning message is hidden).
+		[Ctrl + Shift + S]			Force save room changes. Ignores warning messages (including hidden ones).
+		[Ctrl + E]					Open QuickMet
+		[Ctrl + E]					Over a DOOR tile: Open room linked via door if it exists in the MDB List.
+		[Ctrl + Shift + E] 			Over a DOOR tile: Attempt to force open room linked via door. Room MDB is temporarily added to MDB List.
+		[Ctrl + D] 					Over a DOOR tile: Edit room's door links.
+		[Ctrl + C] 					On EDGE of any scroll: Copy destination door link.
+		[Ctrl + Z]					Undo last tile / BTS change.
+		[Ctrl + Y]					Redo last tile / BTS change.		
+		[Ctrl + 1-4]				Switch current Clipboard.
+		[`]							Show current tile's info, position and scroll in the Level Editor Titlebar.
+		[F11]						Quick BTS 1. Drag a BTS slope or tile into the first Quick BTS box to use this.
+		[F12]						Quick BTS 2. Drag a BTS slope or tile into the second Quick BTS box to use this.
+		[Arrow Keys]				Flip the selected tile in the current direction.
+		[Double Press Arrow Keys]	Flip all selected tiles in the current direction.
+		[=]							Copy the current tile type into the selected tile.
+		[0-9, A-F]					Enter a BTS value into the selected tile.
+		[Page Up]					Increase Brightness
+		[Page Down]					Decrease Brightness
+		[Home]						Increase Tilesize
+		[End]						Decrease Tilesize
+		[Middle Mouse + Drag]		Scroll around the room.
+		[Right Mouse]				Over ENEMY or PLM: Open Enemy / PLM Editor.
+		[Shift + Left Mouse]		Place tiles in a straight line.
+		[Ctrl + Left Mouse]			Place linked Horizontal / Vertical BTS from clicked tile.
+		[Ctrl + Left Mouse + Shift]	Skip placing linked Horizontal / Vertical BTS to current tile, without adjusting the tile count.
+		[Alt]						Display FX1 Liquid height.
+		[Alt + Left Mouse]			Display and move FX1 Liquid height.		
+	Tile Table:
+		[Home]						Increase Tilesize
+		[End]						Decrease Tilesize
+	Map Editor:
+		[M]							Move current room's X/Y position on the map.
+		[E]							Enter room at mouse's position in the map.
+		[H]							Toggle if current map tile is hidden or not.
+	Tileset Editor:	
+		[Ctrl + C]					Copy the current tile in the Tile Table.
+		[Ctrl + V]					Paste the current tile in the Tile Table.
+		[Ctrl + S]					Save changes in the Tile Table.
+		[Page Up]					Increase Brightness
+		[Page Down]					Decrease Brightness
+		[Home]						Increase Tilesize
+		[End]						Decrease Tilesize
+	Global:	
+		[F1]						Toggle Layer 1 
+		[F2]						Toggle Layer 2
+		[F3]						Toggle BTS
+		[F4]						Toggle Screen scrolls 
+		[F5]						Toggle PLMs
+		[F6]						Toggle Enemies
+		[F7]						Show all Layers
+		[F8]						Hide all Layers (except Layer 1 / Layer 2)
+		[F9]						Show the Layer Priorities for the current layer. This cycles between  No Blank Tiles / All Tiles / Off
+		[Tab]						Switch between the opened windows in RF
+		[Esc] 						Hold while LOADING RF: Brings up the default window instead of opening the previous ROM and Room. Other configuration settings are not changed.		
+		[Shift + Esc] 				Moves all windows to the top left of the screen. Use this as a fail safe in case a window gets lost off screen. RF does not require focus for this to function.
+
+MENU TOOLS
+	ROM:
+		Open ROM:
+			Opens a menu where you can select a new Super Metroid ROM to edit. Hold [SHIFT] to open a new ROM without checking for new rooms.
+		Save Room:
+			Saves the current changes to the room.
+		IPS:
+			Create IPS Patch:
+				Creates an IPS containing changes made to your ROM by selecting a reference ROM.
+			Apply IPS Patch:
+				Applies a single IPS patch to your ROM.
+			Apply ASM Patch:
+				Applies a single Assemble ASM file to your ROM.
+			Reapply "...":
+				Quickly applies the previous IPS or ASM patch selected. The name of this option will show the filename of the previous patch.
+		Header:
+			Adds or removes a $200 byte header to the ROM. 
+		Expand ROM:
+			Adds $8000 bytes onto the end of the ROM. You cannot expand the ROM past 8MB. RF will convert a ROM to ExLoROM if required.
+		Reset Checksum:
+			Recalculates the checksum of the ROM, so emulators and cartridges will read it correctly.
+		File Compare:
+			Produces a .txt file in the current ROM directory containing any change made from a reference ROM.
+
+	TOOLS:
+		Undo / Redo Tile Changes
+			Undo or redo the last tile / BTS edit in the Level Editor. You cannot undo PLM / Enemy changes. Undo memory is cleared when opening a room.
+		Clear Room Tilemap:
+			Removes all tile data and BTS in the room, replacing everything with tile $00FF (last tile in CRE), BTS $00. This action can be undone.
+		Apply Default Tile Types:
+			This removes the BTS from the entire room and reapplies the default BTS for each tile from the Tile Table. This action can be undone.
+		Learn Default Tile Types:
+			Reads the currently used tiles in room and sets the most popular Tile Type / BTS of each as the default in the Tile Table.
+		Offscreen PLMs / Enemies To Screen:
+			Moves all PLMs or Enemies that are outside of the room's size limits to the top left of the room.
+		Save Screenshot To Bitmap:
+			Exports a .BMP image of the current room or area into the ROM directory.
+
+	PREFERENCES:
+		View:
+			Level Editor Size:
+				Allows you to select the window size of the main level editor.
+			Level Tile Size:
+				Changes the size of the tiles in the level editor.
+			Tile Table Size:
+				Changes the size of the tiles in the level editor.
+			Layers:
+				Turns individual layers or objects in the level editor on or off.
+				Show Layer Priority:
+					This draws a red & white box in every 8x8 tile in the Level Editor that will draw OVER Samus in game, with a further option to ignore any blank tile. 
+			Brightness:
+				Brightens colours so you can easily tell the difference between darker coloured tiles or blank tiles.
+			Show Special BTS Tiles:
+				Shows special tile types such as Shot / Bomb / Crumble tiles in the Level Editor when enabled. If disabled, RF only shows the BTS outlines and values.
+			Enable Mode 7:
+				Shows the Mode 7 tilemaps of rooms using a Mode 7 tileset, rather than level data. These rooms use a modified TileTable to edit them.
+		PLM / Enemy Settings:
+			Show Enemy / PLM Index:
+				Shows a small icon next to each Enemy or PLM showing it's index.
+			Show Enemy / PLM Boxes:
+				Shows a grey box around an entire Enemy or PLM.
+			Snap Enemies To Grid:
+				Allows you to place enemies via an 8x8 pixel grid to make placement easier.
+			Move Possessors Together:
+				Allows you to move certain enemies together, if an enemy is made up of more than one part.
+		Palette Format:
+			Lets you change the preferred palette file format when exporting palette files.
+		QuickMet Settings:
+			SRM Settings:
+				Lets you choose the default conditions for the game when entering QuickMet.
+			Emulator Path:
+				Lets you select the emulator to run when entering QuickMet.
+			Save RAM Path:
+				Changes the location of the SRM file created when using QuickMet. If your emulator requires it to be in a certain location, you can change it here.
+		Check Unsaved Changes:
+			When enabled, RF will ask you if you want to save any unsaved Level or Map changes before opening a new room or map, and before closing RF.
+		Show Current Room Size:
+			Shows the size used by the room's compressed Level Data in real time as you place tiles.
+		Always On Top:
+			Makes RF and it's windows always appear on top of other non-priority programs.
+		Check Updates:
+			Checks for any existing updates for RF (requires an internet connection). While enabled, RF checks for updates each time when opened. Declining an update when RF is opened will uncheck this option, but it can be enabled later.
+
+	WINDOWS:
+		Show / hide the various windows of SMILE RF.
+		Special Editors:
+			Save Station Editor:
+				Allows you to edit the Save Stations for each area, and where Samus will appear when loading the game.
+			Message Box Editor: 
+				Brings up a window to edit message box tilemaps.
+			Intro Text Editor:
+				Brings up a window where you can edit the intro text, which movies show, and alter the starting sequence.
+			Background Editor: 
+				Brings up a window where you can edit various background tilemaps, including the pause screen and menus, as well as room backgrounds.
+			Mode 7 Scene Editor:
+				Brings up a window which lets you edit the tilemaps for mode 7 scenes, such as the title screen or Ceres' space sprite.
+			Demo Scene Editor:
+				Allows you to edit the Demo Scenes played during the Title Screen. 
+			Ending Credits Editor:
+				Brings up a window where you can edit and place the ending credits' tilemaps. The first window shows how the credits are placed in game, while the second window contains the tilemaps used by the credits.
+			
+	?: (Help Menu)
+		About SMILE RF
+			Brings up a window which reveals what "RF" actually stands for... *gasp*. Also has the current version, and links to peoples' resources.
+		Report Feedback
+			Allows users to send bug reports and feedback (requires an internet connection).
+		Manual RF Update
+			Opens up your default web browser with a link to download to most recent .exe build of RF. Use this if Automatic Updates don't work for you.
+		SMILE RF Help Guide (SMMM)
+			Opens a browser window with a comprehensive guide for SMILE RF and Super Metroid hacking in general, written by Begrimed.
+		Reset Alert Messages
+			Clears the "Do not show this again" flags for all alert messages shown by RF.
+		Task Log:
+			Shows various changes such as saved room sizes, opening new ROMs, etc.

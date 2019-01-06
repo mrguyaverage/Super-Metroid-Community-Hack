@@ -1,0 +1,28 @@
+'Title Stuff' 0661E9 FF 10 00
+'Ending Stuff' 066ED9 FF 10 00
+'Intro 1' 0664C9 0F 10 00
+'Intro 2' 066419 0F 10 00
+'Intro 3' 066569 2F 10 00
+'Misc Sprites' 0D01A0 0F 10 00
+'Beam Palettes' 0843E1 4F 10 00
+'Hyper Beam' 06D906 4F 08 04
+'Hyper Samus' 0DA240 9F 10 00 
+'Samus Death' 0DA120 8F 10 00
+'Spore Spawn' 12E359 CF 10 00
+'SS: Foreground' 12E4F9 6F 10 00
+'SS: Background' 12E5D9 6F 10 00
+'Phantoon' 13CB41 7F 10 00
+'Phantoon Fire' 13CA01 0F 10 00
+'WS: Powered' 13CA61 6F 10 00 
+'WS: Glows' 06EAE8 0F 02 04
+'Norfair Glow 1' 06F1E1 0F 01 0E
+'Draygon' 1296AF 1F 04 00
+'Bomb Torizo' 1506C7 1F 10 00
+'BT: Fight' 150707 1F 10 00
+'BT: Glow' 06E2F3 11 03 04
+'Gold Torizo' 150747 1F 10 00
+'GT: Fight' 150787 1F 10 00
+'GT: Damaged' 020032 FF 10 00
+'GT: Glow' 06E33B 11 03 04
+'Statues Dead' 06E240 3F 08 04
+'Palette Blends' 04AA02 7F 10 00

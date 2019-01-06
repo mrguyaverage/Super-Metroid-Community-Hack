@@ -1,0 +1,2 @@
+Points to Metroid graphics but has no AI
+Pasting Enemy Data here doesn't affect Metroids

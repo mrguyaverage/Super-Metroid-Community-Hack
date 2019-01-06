@@ -1,0 +1,17 @@
+'Title 1' 0A6000
+'Title 2' 0A80D8
+'Mode 7 Metroid' 0AA5E1
+'Ship / Ceres' 0AA82F
+'Font 1' 0AD089
+'Font 2' 0AD713
+'Intro 1' 0AE4C2
+'Intro 2' 0AF90E
+'Colony' 0B510A
+'Zebes' 0B6C76
+'Ending 1' 0B9803
+'Ending 2' 0BB957
+'Ending 3' 0BD7FC
+'Font 3' 0BE7DE
+'Zebes Boom' 0C0304
+'Zebes Mode 7' 0C9101
+'SM Logo' 0CE089

@@ -1,0 +1,79 @@
+00 - No FX1
+02 - Lava
+04 - Acid
+06 - Water
+08 - Spores
+0A - Rain
+0C - Fog
+0E - Unused
+10 - Unused
+12 - Unused
+14 - Unused
+16 - Unused
+18 - Unused
+1A - Unused
+1C - Unused
+1E - Unused
+20 - BG Scroll
+22 - Unused
+24 - BG Glow
+26 - *4 Statues*
+28 - *Ceres Ridley*
+2A - *Ceres Mode 7*
+2C - Haze
+
+00 - No Changes (Dark palettes after X-Ray)
+02 - Normal
+04 - No L2
+06 - Transparent L1 over Samus / Enemies
+08 - Normal
+0A - Normal
+0C - Normal
+0E - Normal
+10 - Normal
+12 - Normal
+14 - Normal
+16 - Negative L2 transparent over L1 / Samus
+18 - Normal
+1A - L2 transparent over L1 / Samus
+1C - L2 transparent over L1 / Samus (Dark palettes)
+1E - Normal
+20 - Normal
+22 - Normal
+24 - Normal
+26 - Dark palettes
+28 - Dark green palettes
+2A - Dark blue palettes
+2C - Dark red palettes
+2E - Normal
+30 - Normal
+32 - Normal
+34 - Normal
+
+00 - No Changes. Dark palettes after X-Ray
+02 - L3 over L1 / L2 / Samus, behind Enemies
+04 - L3 over L1 / Samus, behind Enemies. No L2
+06 - L3 over L1 / L2, behind Samus / Enemies. L1 above L3 transparent over Samus / Enemies
+08 - L3 over L2, behind L1 / Samus / Enemies
+0A - L3 over L2 / Samus, behind L1 / Enemies
+0C - Negative L3 behind L1 / L2 / Samus / Enemies. Revealed outside X-Ray
+0E - L3 over L1 / L2 / Samus, behind Enemies
+10 - L3 over L1 / L2 / Samus, behind Enemies
+12 - L3 over L1 / L2 / Samus, behind Enemies
+14 - Negative L3 over L1 / L2 / Samus, behind Enemies
+16 - Negative L3 over L1 / L2 / Samus, behind Enemies. Negative L2 transparent over L1 / Samus / Enemies
+18 - L3 over L1 / L2 / Samus / Enemies
+1A - Transparent L2 over L1 / Samus. L3 transparent over L2. L3 opaque over L1 / Samus / Enemies
+1C - Transparent L2 over L1 / Samus. L3 transparent over L2. L3 opaque over L1 / Samus / Enemies. Dark palettes
+1E - L3 over L1 / L2 / Samus / Enemies
+20 - L3 over L1 / L2 / Samus, behind Enemies
+22 - Negative L3 over L1 / L2 / Samus, behind Enemies
+24 - L3 behind L1 / L2 / Samus / Enemies. Revealed outside X-Ray
+26 - L3 over L1 / L2 / Samus, behind Enemies. Dark palettes
+28 - Negative L3 behind L1 / L2 / Samus / Enemies. Revealed outside X-Ray. Dark green palettes
+2A - Negative L3 behind L1 / L2 / Samus / Enemies. Revealed outside X-Ray. Dark blue palettes
+2C - L3 behind L1 / L2 / Samus / Enemies. Revealed outside X-Ray
+2E - Negative L3 over L1 / L2 / Samus, behind Enemies
+30 - L3 over L1 / L2 / Samus / Enemies
+32 - Negative L3 over L2 / Samus, behind L1 / Enemies
+34 - L3 over L1 / L2 / Samus, behind Enemies
