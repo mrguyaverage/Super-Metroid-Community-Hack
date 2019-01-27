@@ -1,3 +1,12 @@
+Version 1.03
+	*Feature* You can now click the image of the current Tile Type to show a grid of all options to quickly navigate to a different Tile Type.
+	*Feature* THe Tilemap Editor now includes a button to refresh the current GFX from the ROM, without having to close and reopen it (it has a long load time to draw a lot of graphics)
+	
+	*Bug Fix* Fixed an error that caused RF to incorrectly clear 2 bytes of free space when saving a room with no PLMs or Enemies.
+	*Bug Fix* You can now properly drag palette indexes to change the palette of the current tile in the Tileset Editor.
+	*Bug Fix* RF now properly reads tilesets past $1C.
+	*Bug Fix* Enemy Index Boxes now move properly when moving Possessor Enemies.
+
 Version 1.02	
 	*Feature* RF now asks to confirm if a ROM has a Header if it attemps to open a ROM with incomplete banks.
 	*Feature* Restored an older feature which allowed RF to decrypt Level Data Pointers. It is accessed via the Debug Tools section.
@@ -6,7 +15,7 @@ Version 1.02
 	*Bug Fix* Increased the delay when loading Quickmet with Autopatch enabled by 50% to give a bit more time for the patch to be applied.
 	*Bug Fix* Fixed an error which made RF read the wrong byte when checking for the Compressed Scrolls patch.
 	*Bug Fix* Fixed an accidental stray character that broke code for MultiCRE support.
-	
+
 Version 1.01
 	*Bug Fix* Fixed an error I overlooked that made RF crash when it attempted to save a Tileset Palette or Tiletable.
 
