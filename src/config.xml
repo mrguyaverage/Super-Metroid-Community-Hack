@@ -1,6 +1,7 @@
 <Config>
   <ROMfile>..\build\metroid.smc</ROMfile>
   <FixScroll>false</FixScroll>
+  <PatchQuickmet>false</PatchQuickmet>
   <SaveNames>true</SaveNames>
   <LevelBufferAmount>200</LevelBufferAmount>
   <LogLevel>INFO</LogLevel>
